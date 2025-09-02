@@ -1,56 +1,215 @@
 [
   {
     "id": 1,
-    "name": "The Study Nook",
-    "location": "Quezon City",
+    "name": "Studeo Spaces",
+    "location": "Sampaloc, Manila",
     "price": 300,
-    "main_image": "/assets/space-1.jpg",
-    "images": ["/assets/space1_a.jpg", "/assets/space1_b.jpg"],
-    "description": "A quiet and cozy space perfect for deep focus sessions. Equipped with soundproof pods and an extensive library for a productive day.",
+    "main_image": "/assets/studeo-main.jpg",
+    "images": ["/assets/studeo1.jpg", "/assets/studeo2.jpg"],
+    "description": "A modern study and co-working hub located in Sampaloc, Manila. Perfect for students and freelancers looking for a productive environment.",
     "amenities": [
-      "High-speed Wi-Fi",
-      "Free Coffee & Tea",
-      "Power Outlets at every seat",
-      "Air-conditioned",
-      "Printing Services"
+      "Ultra-fast Fiber Wi-Fi",
+      "Private Study Pods and Flexirooms",
+      "Nap Pods and Napping Beds",
+      "Free-flowing Coffee, Tea & Cold Beverages",
+      "Pantry with Microwave & Refrigerator",
+      "Whiteboards and Wide Desks",
+      "Lockers",
+      "CCTV & Fire Safety Systems",
+      "Air-conditioned"
     ],
-    "hours": "9:00 AM - 9:00 PM",
-    "time_slots": ["9am - 1pm", "1pm - 5pm", "5pm - 9pm"]
+    "hours": "8:00 AM - 10:00 PM",
+    "time_slots": ["8:00 AM - 12:00 PM", "12:00 PM - 4:00 PM", "4:00 PM - 8:00 PM"]
   },
   {
     "id": 2,
-    "name": "WorkHaven Makati",
+    "name": "WorkHaven",
     "location": "Makati City",
     "price": 500,
-    "main_image": "/assets/space-2.jpg",
-    "images": ["/assets/space2_a.jpg", "/assets/space2_b.jpg"],
-    "description": "A professional co-working environment in the heart of the business district. Ideal for meetings, collaborations, and networking.",
+    "main_image": "/assets/workhaven-main.jpg",
+    "images": ["/assets/workhaven1.jpg", "/assets/workhaven2.jpg"],
+    "description": "A professional co-working environment in the heart of Makati. Ideal for business meetings, collaborations, and networking.",
     "amenities": [
       "Fiber Internet",
-      "Meeting Rooms",
-      "Gourmet Pantry",
-      "24/7 Access",
-      "Ergonomic Chairs"
+      "Flexible Desks and Private Offices",
+      "Meeting Rooms with Glass Boards and Smart TVs",
+      "Virtual Office Services",
+      "Free-flowing Premium Coffee, Tea & Snacks",
+      "Printing & Photocopying Services",
+      "Admin & IT Support with BLS-certified Staff",
+      "Gym, Sauna, Pool & Shower Facilities",
+      "Air-conditioned",
+      "Housekeeping & Pest Control"
     ],
     "hours": "Open 24/7",
-    "time_slots": ["Full Day Pass", "Night Owl Pass (9pm-6am)"]
+    "time_slots": ["Full Day Pass", "Night Owl Pass (9:00 PM - 6:00 AM)"]
   },
   {
     "id": 3,
-    "name": "Cebu Creative Hub",
-    "location": "Cebu City",
+    "name": "Beanspace",
+    "location": "Commonwealth Ave., Quezon City",
     "price": 250,
-    "main_image": "/assets/space-3.jpg",
-    "images": [],
-    "description": "A vibrant and artistic space designed to foster creativity and collaboration among Cebu's digital nomads and artists.",
+    "main_image": "/assets/beanspace-main.jpg",
+    "images": ["/assets/beanspace1.jpg", "/assets/beanspace2.jpg"],
+    "description": "A cozy and stylish study cafe offering an inspiring environment for students and professionals.",
     "amenities": [
-      "Community Events",
-      "Art Supplies",
       "Fast Wi-Fi",
-      "Pet-friendly",
-      "Outdoor Garden"
+      "Free Coffee & Tea",
+      "Air-conditioned",
+      "Study Desks and Lounge Areas",
+      "Charging Stations",
+      "Printer & Scanner",
+      "Snack Bar",
+      "Books & Magazines"
     ],
-    "hours": "10:00 AM - 7:00 PM",
-    "time_slots": ["Morning Session (10am-2pm)", "Afternoon Session (2pm-6pm)"]
+    "hours": "9:00 AM - 9:00 PM",
+    "time_slots": ["9:00 AM - 1:00 PM", "1:00 PM - 5:00 PM", "5:00 PM - 9:00 PM"]
+  },
+  {
+    "id": 4,
+    "name": "Big Ideas Cowork and Study Space",
+    "location": "San Fernando, Pampanga",
+    "price": 300,
+    "main_image": "/assets/bigideas-main.jpg",
+    "images": ["/assets/bigideas1.jpg", "/assets/bigideas2.jpg"],
+    "description": "A collaborative space in Pampanga for students, freelancers, and entrepreneurs to innovate and work productively.",
+    "amenities": [
+      "High-speed Wi-Fi",
+      "Conference Rooms",
+      "Air-conditioned",
+      "Free Coffee & Tea",
+      "Printer & Scanner",
+      "Community Events",
+      "Lockers",
+      "Comfortable Seating"
+    ],
+    "hours": "8:00 AM - 8:00 PM",
+    "time_slots": ["8:00 AM - 12:00 PM", "12:00 PM - 4:00 PM", "4:00 PM - 8:00 PM"]
+  },
+  {
+    "id": 5,
+    "name": "The Playground PH",
+    "location": "Lipa City, Batangas",
+    "price": 200,
+    "main_image": "/assets/playground-main.jpg",
+    "images": ["/assets/playground1.jpg", "/assets/playground2.jpg"],
+    "description": "A youthful and creative study hub in Batangas, designed to help students and professionals maximize productivity.",
+    "amenities": [
+      "Fast Wi-Fi",
+      "Open Desks and Shared Tables",
+      "Air-conditioned",
+      "Snack Bar",
+      "Power Outlets",
+      "Event Space",
+      "Whiteboards",
+      "Gaming & Relaxation Zone"
+    ],
+    "hours": "9:00 AM - 10:00 PM",
+    "time_slots": ["9:00 AM - 1:00 PM", "1:00 PM - 5:00 PM", "5:00 PM - 9:00 PM"]
+  },
+  {
+    "id": 6,
+    "name": "The Company",
+    "location": "Cebu City",
+    "price": 400,
+    "main_image": "/assets/company-main.jpg",
+    "images": ["/assets/company1.jpg", "/assets/company2.jpg"],
+    "description": "A leading co-working hub in Cebu’s IT Park, offering flexible spaces for startups, students, and digital nomads.",
+    "amenities": [
+      "Fiber Internet",
+      "Event Spaces",
+      "Meeting Rooms",
+      "Air-conditioned",
+      "Pantry & Kitchen",
+      "24/7 Access",
+      "Community Networking",
+      "Ergonomic Chairs"
+    ],
+    "hours": "Open 24/7",
+    "time_slots": ["Full Day Pass", "Night Owl Pass (9:00 PM - 6:00 AM)"]
+  },
+  {
+    "id": 7,
+    "name": "StudyOut",
+    "location": "Dumaguete City",
+    "price": 150,
+    "main_image": "/assets/studyout-main.jpg",
+    "images": ["/assets/studyout1.jpg", "/assets/studyout2.jpg"],
+    "description": "A community-driven study space in Dumaguete, ideal for students looking for a quiet and budget-friendly environment.",
+    "amenities": [
+      "Wi-Fi Access",
+      "Air-conditioned",
+      "Affordable Rates",
+      "Snack Area",
+      "Power Outlets",
+      "Quiet Study Zones",
+      "Printer Access",
+      "Comfortable Chairs"
+    ],
+    "hours": "9:00 AM - 9:00 PM",
+    "time_slots": ["9:00 AM - 1:00 PM", "1:00 PM - 5:00 PM", "5:00 PM - 9:00 PM"]
+  },
+  {
+    "id": 8,
+    "name": "SharedSpace",
+    "location": "Tacloban City",
+    "price": 200,
+    "main_image": "/assets/sharedspace-main.jpg",
+    "images": ["/assets/sharedspace1.jpg", "/assets/sharedspace2.jpg"],
+    "description": "A collaborative study and work hub in Tacloban, providing affordable and flexible seating for students and professionals.",
+    "amenities": [
+      "High-speed Wi-Fi",
+      "Air-conditioned",
+      "Printing Services",
+      "Open Desks",
+      "Refreshments",
+      "Community Events",
+      "Lockers",
+      "Dedicated Study Zones"
+    ],
+    "hours": "8:00 AM - 10:00 PM",
+    "time_slots": ["8:00 AM - 12:00 PM", "12:00 PM - 4:00 PM", "4:00 PM - 8:00 PM"]
+  },
+  {
+    "id": 9,
+    "name": "Co.Lab",
+    "location": "Davao City",
+    "price": 350,
+    "main_image": "/assets/colab-main.jpg",
+    "images": ["/assets/colab1.jpg", "/assets/colab2.jpg"],
+    "description": "A dynamic co-working space in Davao City built for collaboration, networking, and productive work sessions.",
+    "amenities": [
+      "Fiber Internet",
+      "Event Space",
+      "Private Rooms",
+      "Air-conditioned",
+      "Free Coffee & Tea",
+      "Networking Events",
+      "Pantry",
+      "Comfortable Seating"
+    ],
+    "hours": "8:00 AM - 11:00 PM",
+    "time_slots": ["8:00 AM - 12:00 PM", "12:00 PM - 4:00 PM", "4:00 PM - 8:00 PM"]
+  },
+  {
+    "id": 10,
+    "name": "SmartWork Studyhub & Workspace",
+    "location": "Cagayan De Oro City",
+    "price": 250,
+    "main_image": "/assets/smartwork-main.jpg",
+    "images": ["/assets/smartwork1.jpg", "/assets/smartwork2.jpg"],
+    "description": "A modern study hub and workspace in CDO offering flexible workstations and affordable study rates.",
+    "amenities": [
+      "Wi-Fi Access",
+      "Ergonomic Chairs",
+      "Air-conditioned",
+      "Printing Services",
+      "Snack Bar",
+      "Private Study Rooms",
+      "Lockers",
+      "Community Lounge"
+    ],
+    "hours": "9:00 AM - 10:00 PM",
+    "time_slots": ["9:00 AM - 1:00 PM", "1:00 PM - 5:00 PM", "5:00 PM - 9:00 PM"]
   }
 ]
