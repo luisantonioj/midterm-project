@@ -87,7 +87,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section with Slideshow */}
-      <section className="relative h-screen max-h-[800px] text-white overflow-hidden">
+      <section className="relative h-screen max-h-[800px] text-white overflow-hidden w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
         {/* Slideshow */}
         <div className="relative h-full">
           {heroImages.map((image, index) => (
@@ -100,7 +100,7 @@ export default function Home() {
               <img 
                 src={image} 
                 alt={`Study space ${index + 1}`} 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover min-w-full"
               />
               {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-slate-900/90"></div>
@@ -108,6 +108,7 @@ export default function Home() {
           ))}
         </div>
         
+        {/* Rest of your hero content remains the same */}
         {/* Navigation Arrows */}
         <button 
           onClick={goToPrevSlide}
@@ -193,28 +194,6 @@ export default function Home() {
                 </button>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Popular Categories */}
-      <section className="bg-slate-50 py-12 px-4">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl font-bold text-slate-900 mb-8 text-center">Popular Categories</h2>
-          <div className="flex flex-wrap justify-center gap-4">
-            {categories.map(category => (
-              <button
-                key={category.id}
-                onClick={() => setActiveCategory(category.id)}
-                className={`px-5 py-3 rounded-lg font-medium transition-all ${
-                  activeCategory === category.id
-                    ? 'bg-indigo-600 text-white shadow-md'
-                    : 'bg-white text-slate-700 hover:bg-slate-100 shadow-sm'
-                }`}
-              >
-                {category.name}
-              </button>
-            ))}
           </div>
         </div>
       </section>
