@@ -54,7 +54,7 @@
     "name": "Big Ideas Cowork and Study Space",
     "location": "San Fernando, Pampanga",
     "price": 300,
-    "main_image": "/assets/bigideas-main.jpg",
+    "main_image": "/images/4-bigideas/4.1.jpg",
     "images": ["/assets/bigideas1.jpg", "/assets/bigideas2.jpg"],
     "description": "A collaborative space in Pampanga for students, freelancers, and entrepreneurs to innovate and work productively.",
     "tag": {
@@ -70,7 +70,7 @@
     "name": "The Playground PH",
     "location": "Lipa City, Batangas",
     "price": 200,
-    "main_image": "/assets/playground-main.jpg",
+    "main_image": "/images/5-theplayground/5.1.png",
     "images": ["/assets/playground1.jpg", "/assets/playground2.jpg"],
     "description": "A youthful and creative study hub in Batangas, designed to help students and professionals maximize productivity.",
     "tag": {
@@ -86,7 +86,7 @@
     "name": "The Company",
     "location": "Cebu City",
     "price": 400,
-    "main_image": "/assets/company-main.jpg",
+    "main_image": "/images/6-thecompany/6.1.jpg",
     "images": ["/assets/company1.jpg", "/assets/company2.jpg"],
     "description": "A leading co-working hub in Cebu’s IT Park, offering flexible spaces for startups, students, and digital nomads.",
     "tag": {
@@ -102,7 +102,7 @@
     "name": "StudyOut",
     "location": "Dumaguete City",
     "price": 150,
-    "main_image": "/assets/studyout-main.jpg",
+    "main_image": "/images/7-studyout/7.1.jpg",
     "images": ["/assets/studyout1.jpg", "/assets/studyout2.jpg"],
     "description": "A community-driven study space in Dumaguete, ideal for students looking for a quiet and budget-friendly environment.",
     "tag": {
@@ -118,7 +118,7 @@
     "name": "SharedSpace",
     "location": "Tacloban City",
     "price": 200,
-    "main_image": "/assets/sharedspace-main.jpg",
+    "main_image": "/images/8-sharedspace/8.1.jpg",
     "images": ["/assets/sharedspace1.jpg", "/assets/sharedspace2.jpg"],
     "description": "A collaborative study and work hub in Tacloban, providing affordable and flexible seating for students and professionals.",
     "tag": {
@@ -134,7 +134,7 @@
     "name": "Co.Lab",
     "location": "Davao City",
     "price": 350,
-    "main_image": "/assets/colab-main.jpg",
+    "main_image": "/images/9-co.lab/9.1.jpg",
     "images": ["/assets/colab1.jpg", "/assets/colab2.jpg"],
     "description": "A dynamic co-working space in Davao City built for collaboration, networking, and productive work sessions.",
     "tag": {
@@ -150,7 +150,7 @@
     "name": "SmartWork Studyhub & Workspace",
     "location": "Cagayan De Oro City",
     "price": 250,
-    "main_image": "/assets/smartwork-main.jpg",
+    "main_image": "/images/10-smartwork/10.1.jpg",
     "images": ["/assets/smartwork1.jpg", "/assets/smartwork2.jpg"],
     "description": "A modern study hub and workspace in CDO offering flexible workstations and affordable study rates.",
     "tag": {
