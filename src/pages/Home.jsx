@@ -108,7 +108,6 @@ export default function Home() {
           ))}
         </div>
         
-        {/* Rest of your hero content remains the same */}
         {/* Navigation Arrows */}
         <button 
           onClick={goToPrevSlide}
