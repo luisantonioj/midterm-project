@@ -125,17 +125,6 @@ export default function Header() {
               Home
             </Link>
             <Link
-              to="/spaces"
-              className={`px-4 py-3 rounded-lg transition-colors ${
-                location.pathname === "/spaces"
-                  ? "bg-indigo-50 text-indigo-700 font-medium"
-                  : "text-slate-700 hover:text-indigo-600 hover:bg-slate-50"
-              }`}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Browse Spaces
-            </Link>
-            <Link
               to="/dashboard/my-bookings"
               className={`px-4 py-3 rounded-lg transition-colors ${
                 location.pathname.startsWith("/dashboard")

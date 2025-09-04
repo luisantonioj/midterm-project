@@ -7,40 +7,29 @@
     "main_image": "/assets/studeo-main.jpg",
     "images": ["/assets/studeo1.jpg", "/assets/studeo2.jpg"],
     "description": "A modern study and co-working hub located in Sampaloc, Manila. Perfect for students and freelancers looking for a productive environment.",
-    "amenities": [
-      "Ultra-fast Fiber Wi-Fi",
-      "Private Study Pods and Flexirooms",
-      "Nap Pods and Napping Beds",
-      "Free-flowing Coffee, Tea & Cold Beverages",
-      "Pantry with Microwave & Refrigerator",
-      "Whiteboards and Wide Desks",
-      "Lockers",
-      "CCTV & Fire Safety Systems",
-      "Air-conditioned"
-    ],
+    "tag": {
+      "type": "premium",
+      "label": "Premium"
+    },
+    "amenities": ["wifi", "pods", "nap", "coffee", "pantry", "whiteboard", "lockers", "safety", "ac"],
     "hours": "8:00 AM - 10:00 PM",
-    "time_slots": ["8:00 AM - 12:00 PM", "12:00 PM - 4:00 PM", "4:00 PM - 8:00 PM"]
+    "time_slots": ["8:00 AM - 12:00 PM", "12:00 PM - 4:00 PM", "4:00 PM - 8:00 PM"],
+    "rating": 4.8,
+    "reviews": 124
   },
   {
     "id": 2,
     "name": "WorkHaven",
     "location": "Makati City",
     "price": 500,
-    "main_image": "/assets/workhaven-main.jpg",
+    "main_image": "/images/2-workhaven/2.1.jpg",
     "images": ["/assets/workhaven1.jpg", "/assets/workhaven2.jpg"],
     "description": "A professional co-working environment in the heart of Makati. Ideal for business meetings, collaborations, and networking.",
-    "amenities": [
-      "Fiber Internet",
-      "Flexible Desks and Private Offices",
-      "Meeting Rooms with Glass Boards and Smart TVs",
-      "Virtual Office Services",
-      "Free-flowing Premium Coffee, Tea & Snacks",
-      "Printing & Photocopying Services",
-      "Admin & IT Support with BLS-certified Staff",
-      "Gym, Sauna, Pool & Shower Facilities",
-      "Air-conditioned",
-      "Housekeeping & Pest Control"
-    ],
+    "tag": {
+      "type": "premium",
+      "label": "Premium"
+    },
+    "amenities": ["wifi", "desks", "meeting", "virtual", "coffee", "printing", "support", "gym", "ac", "cleaning"],
     "hours": "Open 24/7",
     "time_slots": ["Full Day Pass", "Night Owl Pass (9:00 PM - 6:00 AM)"]
   },
@@ -49,19 +38,14 @@
     "name": "Beanspace",
     "location": "Commonwealth Ave., Quezon City",
     "price": 250,
-    "main_image": "/assets/beanspace-main.jpg",
+    "main_image": "/images/3-beanspace/3.1.jpeg",
     "images": ["/assets/beanspace1.jpg", "/assets/beanspace2.jpg"],
     "description": "A cozy and stylish study cafe offering an inspiring environment for students and professionals.",
-    "amenities": [
-      "Fast Wi-Fi",
-      "Free Coffee & Tea",
-      "Air-conditioned",
-      "Study Desks and Lounge Areas",
-      "Charging Stations",
-      "Printer & Scanner",
-      "Snack Bar",
-      "Books & Magazines"
-    ],
+    "tag": {
+      "type": "popular",
+      "label": "Popular"
+    },
+    "amenities": ["wifi", "coffee", "ac", "desks", "charging", "printer", "snacks", "books"],
     "hours": "9:00 AM - 9:00 PM",
     "time_slots": ["9:00 AM - 1:00 PM", "1:00 PM - 5:00 PM", "5:00 PM - 9:00 PM"]
   },
@@ -73,16 +57,11 @@
     "main_image": "/assets/bigideas-main.jpg",
     "images": ["/assets/bigideas1.jpg", "/assets/bigideas2.jpg"],
     "description": "A collaborative space in Pampanga for students, freelancers, and entrepreneurs to innovate and work productively.",
-    "amenities": [
-      "High-speed Wi-Fi",
-      "Conference Rooms",
-      "Air-conditioned",
-      "Free Coffee & Tea",
-      "Printer & Scanner",
-      "Community Events",
-      "Lockers",
-      "Comfortable Seating"
-    ],
+    "tag": {
+      "type": "standard",
+      "label": "Standard"
+    },
+    "amenities": ["wifi", "meeting", "ac", "coffee", "printer", "events", "lockers", "seating"],
     "hours": "8:00 AM - 8:00 PM",
     "time_slots": ["8:00 AM - 12:00 PM", "12:00 PM - 4:00 PM", "4:00 PM - 8:00 PM"]
   },
@@ -94,16 +73,11 @@
     "main_image": "/assets/playground-main.jpg",
     "images": ["/assets/playground1.jpg", "/assets/playground2.jpg"],
     "description": "A youthful and creative study hub in Batangas, designed to help students and professionals maximize productivity.",
-    "amenities": [
-      "Fast Wi-Fi",
-      "Open Desks and Shared Tables",
-      "Air-conditioned",
-      "Snack Bar",
-      "Power Outlets",
-      "Event Space",
-      "Whiteboards",
-      "Gaming & Relaxation Zone"
-    ],
+    "tag": {
+      "type": "new",
+      "label": "New"
+    },
+    "amenities": ["wifi", "desks", "ac", "snacks", "power", "events", "whiteboard", "gaming"],
     "hours": "9:00 AM - 10:00 PM",
     "time_slots": ["9:00 AM - 1:00 PM", "1:00 PM - 5:00 PM", "5:00 PM - 9:00 PM"]
   },
@@ -115,16 +89,11 @@
     "main_image": "/assets/company-main.jpg",
     "images": ["/assets/company1.jpg", "/assets/company2.jpg"],
     "description": "A leading co-working hub in Cebu’s IT Park, offering flexible spaces for startups, students, and digital nomads.",
-    "amenities": [
-      "Fiber Internet",
-      "Event Spaces",
-      "Meeting Rooms",
-      "Air-conditioned",
-      "Pantry & Kitchen",
-      "24/7 Access",
-      "Community Networking",
-      "Ergonomic Chairs"
-    ],
+    "tag": {
+      "type": "premium",
+      "label": "Premium"
+    },
+    "amenities": ["wifi", "events", "meeting", "ac", "pantry", "24/7", "networking", "ergonomic"],
     "hours": "Open 24/7",
     "time_slots": ["Full Day Pass", "Night Owl Pass (9:00 PM - 6:00 AM)"]
   },
@@ -136,16 +105,11 @@
     "main_image": "/assets/studyout-main.jpg",
     "images": ["/assets/studyout1.jpg", "/assets/studyout2.jpg"],
     "description": "A community-driven study space in Dumaguete, ideal for students looking for a quiet and budget-friendly environment.",
-    "amenities": [
-      "Wi-Fi Access",
-      "Air-conditioned",
-      "Affordable Rates",
-      "Snack Area",
-      "Power Outlets",
-      "Quiet Study Zones",
-      "Printer Access",
-      "Comfortable Chairs"
-    ],
+    "tag": {
+      "type": "budget",
+      "label": "Budget"
+    },
+    "amenities": ["wifi", "ac", "affordable", "snacks", "power", "quiet", "printer", "seating"],
     "hours": "9:00 AM - 9:00 PM",
     "time_slots": ["9:00 AM - 1:00 PM", "1:00 PM - 5:00 PM", "5:00 PM - 9:00 PM"]
   },
@@ -157,16 +121,11 @@
     "main_image": "/assets/sharedspace-main.jpg",
     "images": ["/assets/sharedspace1.jpg", "/assets/sharedspace2.jpg"],
     "description": "A collaborative study and work hub in Tacloban, providing affordable and flexible seating for students and professionals.",
-    "amenities": [
-      "High-speed Wi-Fi",
-      "Air-conditioned",
-      "Printing Services",
-      "Open Desks",
-      "Refreshments",
-      "Community Events",
-      "Lockers",
-      "Dedicated Study Zones"
-    ],
+    "tag": {
+      "type": "standard",
+      "label": "Standard"
+    },
+    "amenities": ["wifi", "ac", "printing", "desks", "refreshments", "events", "lockers", "study"],
     "hours": "8:00 AM - 10:00 PM",
     "time_slots": ["8:00 AM - 12:00 PM", "12:00 PM - 4:00 PM", "4:00 PM - 8:00 PM"]
   },
@@ -178,16 +137,11 @@
     "main_image": "/assets/colab-main.jpg",
     "images": ["/assets/colab1.jpg", "/assets/colab2.jpg"],
     "description": "A dynamic co-working space in Davao City built for collaboration, networking, and productive work sessions.",
-    "amenities": [
-      "Fiber Internet",
-      "Event Space",
-      "Private Rooms",
-      "Air-conditioned",
-      "Free Coffee & Tea",
-      "Networking Events",
-      "Pantry",
-      "Comfortable Seating"
-    ],
+    "tag": {
+      "type": "popular",
+      "label": "Popular"
+    },
+    "amenities": ["wifi", "events", "private", "ac", "coffee", "networking", "pantry", "seating"],
     "hours": "8:00 AM - 11:00 PM",
     "time_slots": ["8:00 AM - 12:00 PM", "12:00 PM - 4:00 PM", "4:00 PM - 8:00 PM"]
   },
@@ -199,16 +153,11 @@
     "main_image": "/assets/smartwork-main.jpg",
     "images": ["/assets/smartwork1.jpg", "/assets/smartwork2.jpg"],
     "description": "A modern study hub and workspace in CDO offering flexible workstations and affordable study rates.",
-    "amenities": [
-      "Wi-Fi Access",
-      "Ergonomic Chairs",
-      "Air-conditioned",
-      "Printing Services",
-      "Snack Bar",
-      "Private Study Rooms",
-      "Lockers",
-      "Community Lounge"
-    ],
+    "tag": {
+      "type": "standard",
+      "label": "Standard"
+    },
+    "amenities": ["wifi", "ergonomic", "ac", "printing", "snacks", "private", "lockers", "lounge"],
     "hours": "9:00 AM - 10:00 PM",
     "time_slots": ["9:00 AM - 1:00 PM", "1:00 PM - 5:00 PM", "5:00 PM - 9:00 PM"]
   }
