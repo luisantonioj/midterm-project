@@ -26,7 +26,7 @@ export default function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto px-10 py-0 sm:px-14 sm:py-10 lg:px-14 lg:py-2">
+      <div className="mx-auto px-10 py-0 sm:px-10 sm:py-2 lg:px-14 lg:py-2">
         <div className="flex justify-between items-center h-16">
           <Logo isScrolled={isScrolled} setIsMenuOpen={setIsMenuOpen} />
 
