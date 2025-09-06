@@ -2,22 +2,14 @@ import React, { useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import { useBookings } from "../contexts/BookingContext";
 import ConfirmModal from "../components/ConfirmModal";
+import Login from "./Login";
 
 export default function Dashboard() {
   const { user } = useAuth();
   const { bookings, cancelBooking } = useBookings();
 
-  // Defensive: if user is not present (should be prevented by ProtectedRoute),
-  // render a friendly message instead of throwing when accessing user.id
   if (!user) {
-    return (
-      <div>
-        <h1 className="text-2xl font-semibold">My Bookings</h1>
-        <div className="bg-white p-6 rounded shadow mt-4">
-          You are not logged in. Please <a href="/login" className="text-blue-600 underline">log in</a> to see your bookings.
-        </div>
-      </div>
-    );
+    return <Login />;
   }
 
   const myBookings = (Array.isArray(bookings) ? bookings : []).filter((b) => b.userId === user.id);
