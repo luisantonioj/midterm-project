@@ -1,11 +1,10 @@
 import React, { useState, useMemo, useEffect } from "react";
-import spacesData from "../../data/spaces.json";
-import SpaceCard from "../../components/SpaceCard";
-
-import Hero from "./Hero";
-import SearchBar from "./SearchBar";
-import Filters from "./Filters";
-import SpacesGrid from "./SpacesGrid";
+import spacesData from "../data/spaces.json";
+import SpaceCard from "../components/SpaceCard";
+import Hero from "../components/Home/Hero";
+import SearchBar from "../components/Home/SearchBar";
+import Filters from "../components/Home/Filters";
+import SpacesGrid from "../components/Home/SpacesGrid";
 
 const heroImages = [
   "/images/1-studeospaces/1.1.jpg",

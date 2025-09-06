@@ -2,11 +2,17 @@ import React, { useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import { useBookings } from "../contexts/BookingContext";
 import ConfirmModal from "../components/ConfirmModal";
+import Login from "./Login";
 
 export default function Dashboard() {
   const { user } = useAuth();
   const { bookings, cancelBooking } = useBookings();
-  const myBookings = bookings.filter(b => b.userId === user.id);
+
+  if (!user) {
+    return <Login />;
+  }
+
+  const myBookings = (Array.isArray(bookings) ? bookings : []).filter((b) => b.userId === user.id);
 
   const [selectedCancel, setSelectedCancel] = useState(null);
 
@@ -24,7 +30,7 @@ export default function Dashboard() {
         <div className="bg-white p-6 rounded shadow">You have no bookings yet.</div>
       ) : (
         <div className="grid gap-4">
-          {myBookings.map(b => (
+          {myBookings.map((b) => (
             <div key={b.id} className="bg-white p-4 rounded shadow flex justify-between items-center">
               <div>
                 <div className="font-semibold">{b.spaceName} • {b.timeSlot}</div>

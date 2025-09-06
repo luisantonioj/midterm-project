@@ -18,23 +18,29 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Force solid background for certain pages
+  const isDashboard = location.pathname.startsWith("/dashboard");
+  const isAuthPage = location.pathname.startsWith("/auth") || location.pathname.startsWith("/login");
+  const isSolidPage = isDashboard || isAuthPage || isScrolled;
+
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-md border-b border-slate-200/80"
+        isSolidPage
+          ? "bg-white shadow-md border-b border-slate-200"
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto px-10 py-0 sm:px-14 sm:py-10 lg:px-14 lg:py-2">
+      <div className="mx-auto px-10 py-0 sm:px-10 sm:py-2 lg:px-14 lg:py-2">
         <div className="flex justify-between items-center h-16">
-          <Logo isScrolled={isScrolled} setIsMenuOpen={setIsMenuOpen} />
+          <Logo isScrolled={isScrolled || isSolidPage} setIsMenuOpen={setIsMenuOpen} />
 
           <DesktopNav
             user={user}
             login={login}
             logout={logout}
             isScrolled={isScrolled}
+            isSolidPage={isSolidPage}
             location={location}
           />
 
@@ -51,6 +57,7 @@ export default function Header() {
           login={login}
           logout={logout}
           isScrolled={isScrolled}
+          isSolidPage={isSolidPage}
           location={location}
         />
       </div>
