@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 export default function MobileNav({ 
   isMenuOpen, setIsMenuOpen, user, login, logout, isScrolled, isSolidPage, location 
 }) {
+  // Always true if scrolled OR if we're on a solid page
   const activeLight = isScrolled || isSolidPage;
 
   return (

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function DesktopNav({ user, login, logout, isScrolled, isSolidPage, location }) {
+  // Always true if scrolled OR if we're on a solid page
   const activeLight = isScrolled || isSolidPage;
 
   return (
