@@ -102,7 +102,7 @@ export default function MobileNav({
             }}
             className={`w-full text-left px-4 py-3 mt-2 rounded-lg transition-all duration-200 ${
               activeLight
-                ? "bg-gradient-to-b from-indigo-600 to-indigo-700 text-white hover:from-indigo-700 hover:to-indigo-800"
+                ? "bg-indigo-600 text-white hover:bg-indigo-700"
                 : "bg-white/20 text-white backdrop-blur-sm hover:bg-white/30"
             }`}
           >

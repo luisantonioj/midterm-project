@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function DesktopNav({ user, login, logout, isScrolled, isSolidPage, location }) {
   const activeLight = isScrolled || isSolidPage;
+
   return (
     <nav className="hidden md:flex items-center space-x-1">
       <Link
@@ -71,7 +72,7 @@ export default function DesktopNav({ user, login, logout, isScrolled, isSolidPag
           onClick={login}
           className={`ml-4 px-4 py-2 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg ${
             activeLight
-              ? "bg-gradient-to-b from-indigo-600 to-indigo-700 text-white hover:from-indigo-700 hover:to-indigo-800"
+              ? "bg-indigo-600 text-white hover:bg-indigo-700"
               : "bg-white/20 text-white backdrop-blur-sm hover:bg-white/30"
           }`}
         >

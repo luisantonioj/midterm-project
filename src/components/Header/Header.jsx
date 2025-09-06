@@ -19,16 +19,15 @@ export default function Header() {
   }, []);
 
   // Force solid background for certain pages
-  const solidPages = ["/dashboard/my-bookings"];
-  const isSolidPage = solidPages.includes(location.pathname);
+  const isDashboard = location.pathname.startsWith("/dashboard");
+  const isAuthPage = location.pathname.startsWith("/auth") || location.pathname.startsWith("/login");
+  const isSolidPage = isDashboard || isAuthPage || isScrolled;
 
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isSolidPage
-          ? "bg-white shadow-md border-b border-slate-200" // ✅ fully solid, visible
-          : isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-md border-b border-slate-200/80"
+          ? "bg-white shadow-md border-b border-slate-200"
           : "bg-transparent"
       }`}
     >
@@ -40,7 +39,8 @@ export default function Header() {
             user={user}
             login={login}
             logout={logout}
-            isScrolled={isScrolled || isSolidPage}
+            isScrolled={isScrolled}
+            isSolidPage={isSolidPage}
             location={location}
           />
 
@@ -56,7 +56,8 @@ export default function Header() {
           user={user}
           login={login}
           logout={logout}
-          isScrolled={isScrolled || isSolidPage}
+          isScrolled={isScrolled}
+          isSolidPage={isSolidPage}
           location={location}
         />
       </div>
