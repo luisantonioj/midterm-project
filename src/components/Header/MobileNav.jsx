@@ -100,6 +100,7 @@ export default function MobileNav({
             onClick={() => {
               login();
               setIsMenuOpen(false);
+              navigate("/dashboard/my-bookings");
             }}
             className={`w-full text-left px-4 py-3 mt-2 rounded-lg transition-all duration-200 ${
               activeLight

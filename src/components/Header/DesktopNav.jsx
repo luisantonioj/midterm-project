@@ -70,7 +70,10 @@ export default function DesktopNav({ user, login, logout, isScrolled, isSolidPag
         </div>
       ) : (
         <button
-          onClick={login}
+          onClick={() => {
+            login();
+            navigate("/dashboard/my-bookings");
+          }}
           className={`ml-4 px-4 py-2 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg ${
             activeLight
               ? "bg-indigo-600 text-white hover:bg-indigo-700"
