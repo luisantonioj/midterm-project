@@ -41,7 +41,7 @@ export default function SpaceCard({ space }) {
         
         <div className="p-4">
           <div className="flex justify-between items-start">
-            <h3 className="font-semibold text-slate-900 text-lg pr-2">{space.name}</h3>
+            <h3 className="font-semibold text-slate-900 text-lg pr-2 leading-tight">{space.name}</h3>
             <div className="text-right whitespace-nowrap">
               <span className="text-lg font-bold text-indigo-600">₱{space.price}</span>
               <span className="text-slate-500 text-sm ml-0.5">/hr</span>
@@ -87,7 +87,7 @@ export default function SpaceCard({ space }) {
       {/* Rating and Reviews */}
       <div className="px-4 pb-3 pt-0 border-slate-100">
         <div className="flex items-center">
-          <svg className="w-4 h-4 text-amber-400 fill-current mr-1" viewBox="0 0 20 20">
+          <svg className="w-4 h-4 text-slate-600 fill-current mr-1" viewBox="0 0 20 20">
             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
           </svg>
           <span className="text-sm font-medium text-slate-700 mr-1">{space.rating}</span>
