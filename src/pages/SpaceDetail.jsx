@@ -102,7 +102,7 @@ export default function SpaceDetail() {
             <div className="p-6">
               <div className="mb-6">
                 <h1 className="text-3xl md:text-4xl font-bold text-slate-800 mb-2">{space.name}</h1>
-                <div className="flex items-center text-slate-600 mb-3">
+                <div className="flex items-center text-slate-600 mb-2">
                   <i className="fas fa-map-marker-alt mr-2 text-indigo-500"></i>
                   <span>{space.location}</span>
                 </div>
@@ -148,6 +148,7 @@ export default function SpaceDetail() {
                   type="date" 
                   value={date} 
                   onChange={e => setDate(e.target.value)}
+                  min={new Date().toLocaleDateString('en-CA')} // Prevent past dates
                   className="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-indigo-500 focus:border-transparent" 
                   required
                 />
