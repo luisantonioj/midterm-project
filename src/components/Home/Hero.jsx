@@ -52,7 +52,7 @@ export default function Hero({
 
           <SearchBar query={query} setQuery={setQuery} />
 
-          {/* Quick Filters */}
+          {/* Quick Filters
           <div className="mt-8 flex flex-wrap justify-center gap-2">
             {amenityOptions.slice(0, 4).map((amenity) => (
               <button
@@ -67,7 +67,7 @@ export default function Hero({
                 <span className="capitalize">{amenity}</span>
               </button>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
