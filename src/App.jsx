@@ -6,6 +6,7 @@ import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import Header from "./components/Header/Header";
 import ProtectedRoute from "./utils/protectedRoute";
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 export default function App() {
   return (

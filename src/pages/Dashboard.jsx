@@ -22,7 +22,7 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="pt-25 pt-0">
+    <div className="pt-25">
       <h1 className="text-2xl font-semibold">My Bookings</h1>
       <p className="text-sm text-gray-600 mb-4">Bookings persist across refresh (localStorage)</p>
 
