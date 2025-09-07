@@ -28,7 +28,7 @@ export default function SpaceCard({ space }) {
           <img 
             src={space.main_image} 
             alt={space.name} 
-            className="h-48 w-full object-cover" 
+            className="h-80 w-full object-cover" 
           />
           
           {/* Tag in upper left corner */}
