@@ -21,8 +21,9 @@ export default function Header() {
   // Force solid background for certain pages
   const isDashboard = location.pathname.startsWith("/dashboard");
   const isAuthPage = location.pathname.startsWith("/auth") || location.pathname.startsWith("/login");
-  const isSolidPage = isDashboard || isAuthPage || isScrolled;
-
+  const isSpacePage = location.pathname.startsWith("/space");
+  const isSolidPage = isDashboard || isAuthPage || isSpacePage || isScrolled;
+  
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
