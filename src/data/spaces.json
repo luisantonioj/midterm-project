@@ -31,7 +31,9 @@
     },
     "amenities": ["wifi", "desks", "meeting", "virtual", "coffee", "printing", "support", "gym", "ac", "cleaning"],
     "hours": "Open 24/7",
-    "time_slots": ["Full Day Pass", "Night Owl Pass (9:00 PM - 6:00 AM)"]
+    "time_slots": ["Full Day Pass", "Night Owl Pass (9:00 PM - 6:00 AM)"],
+    "rating": 4.7,
+    "reviews": 210
   },
   {
     "id": 3,
@@ -47,7 +49,9 @@
     },
     "amenities": ["wifi", "coffee", "ac", "desks", "charging", "printer", "snacks", "books"],
     "hours": "9:00 AM - 9:00 PM",
-    "time_slots": ["9:00 AM - 1:00 PM", "1:00 PM - 5:00 PM", "5:00 PM - 9:00 PM"]
+    "time_slots": ["9:00 AM - 1:00 PM", "1:00 PM - 5:00 PM", "5:00 PM - 9:00 PM"],
+    "rating": 4.6,
+    "reviews": 189
   },
   {
     "id": 4,
@@ -63,7 +67,9 @@
     },
     "amenities": ["wifi", "meeting", "ac", "coffee", "printer", "events", "lockers", "seating"],
     "hours": "8:00 AM - 8:00 PM",
-    "time_slots": ["8:00 AM - 12:00 PM", "12:00 PM - 4:00 PM", "4:00 PM - 8:00 PM"]
+    "time_slots": ["8:00 AM - 12:00 PM", "12:00 PM - 4:00 PM", "4:00 PM - 8:00 PM"],
+    "rating": 4.4,
+    "reviews": 95
   },
   {
     "id": 5,
@@ -79,7 +85,9 @@
     },
     "amenities": ["wifi", "desks", "ac", "snacks", "power", "events", "whiteboard", "gaming"],
     "hours": "9:00 AM - 10:00 PM",
-    "time_slots": ["9:00 AM - 1:00 PM", "1:00 PM - 5:00 PM", "5:00 PM - 9:00 PM"]
+    "time_slots": ["9:00 AM - 1:00 PM", "1:00 PM - 5:00 PM", "5:00 PM - 9:00 PM"],
+    "rating": 4.2,
+    "reviews": 47
   },
   {
     "id": 6,
@@ -95,7 +103,9 @@
     },
     "amenities": ["wifi", "events", "meeting", "ac", "pantry", "24/7", "networking", "ergonomic"],
     "hours": "Open 24/7",
-    "time_slots": ["Full Day Pass", "Night Owl Pass (9:00 PM - 6:00 AM)"]
+    "time_slots": ["Full Day Pass", "Night Owl Pass (9:00 PM - 6:00 AM)"],
+    "rating": 4.9,
+    "reviews": 312
   },
   {
     "id": 7,
@@ -111,7 +121,9 @@
     },
     "amenities": ["wifi", "ac", "affordable", "snacks", "power", "quiet", "printer", "seating"],
     "hours": "9:00 AM - 9:00 PM",
-    "time_slots": ["9:00 AM - 1:00 PM", "1:00 PM - 5:00 PM", "5:00 PM - 9:00 PM"]
+    "time_slots": ["9:00 AM - 1:00 PM", "1:00 PM - 5:00 PM", "5:00 PM - 9:00 PM"],
+    "rating": 4.3,
+    "reviews": 78
   },
   {
     "id": 8,
@@ -127,7 +139,9 @@
     },
     "amenities": ["wifi", "ac", "printing", "desks", "refreshments", "events", "lockers", "study"],
     "hours": "8:00 AM - 10:00 PM",
-    "time_slots": ["8:00 AM - 12:00 PM", "12:00 PM - 4:00 PM", "4:00 PM - 8:00 PM"]
+    "time_slots": ["8:00 AM - 12:00 PM", "12:00 PM - 4:00 PM", "4:00 PM - 8:00 PM"],
+    "rating": 4.1,
+    "reviews": 52
   },
   {
     "id": 9,
@@ -143,7 +157,9 @@
     },
     "amenities": ["wifi", "events", "private", "ac", "coffee", "networking", "pantry", "seating"],
     "hours": "8:00 AM - 11:00 PM",
-    "time_slots": ["8:00 AM - 12:00 PM", "12:00 PM - 4:00 PM", "4:00 PM - 8:00 PM"]
+    "time_slots": ["8:00 AM - 12:00 PM", "12:00 PM - 4:00 PM", "4:00 PM - 8:00 PM"],
+    "rating": 4.5,
+    "reviews": 134
   },
   {
     "id": 10,
@@ -151,7 +167,7 @@
     "location": "Cagayan De Oro City",
     "price": 250,
     "main_image": "/images/10-smartwork/10.1.jpg",
-    "images": ["/assets/smartwork1.jpg", "/assets/smartwork2.jpg"],
+    "images": ["/assets/sartwork1.jpg", "/assets/smartwork2.jpg"],
     "description": "A modern study hub and workspace in CDO offering flexible workstations and affordable study rates.",
     "tag": {
       "type": "standard",
@@ -159,6 +175,8 @@
     },
     "amenities": ["wifi", "ergonomic", "ac", "printing", "snacks", "private", "lockers", "lounge"],
     "hours": "9:00 AM - 10:00 PM",
-    "time_slots": ["9:00 AM - 1:00 PM", "1:00 PM - 5:00 PM", "5:00 PM - 9:00 PM"]
+    "time_slots": ["9:00 AM - 1:00 PM", "1:00 PM - 5:00 PM", "5:00 PM - 9:00 PM"],
+    "rating": 4.2,
+    "reviews": 66
   }
 ]
