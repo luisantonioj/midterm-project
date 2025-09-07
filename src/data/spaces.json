@@ -4,7 +4,7 @@
     "name": "Studeo Spaces",
     "location": "Sampaloc, Manila",
     "price": 300,
-    "main_image": "/assets/studeo-main.jpg",
+    "main_image": "https://studeospaces.com/wp-content/uploads/2024/06/Studeo-Spaces-Study-Area-4-768x1024.jpg",
     "images": ["/assets/studeo1.jpg", "/assets/studeo2.jpg"],
     "description": "A modern study and co-working hub located in Sampaloc, Manila. Perfect for students and freelancers looking for a productive environment.",
     "tag": {
