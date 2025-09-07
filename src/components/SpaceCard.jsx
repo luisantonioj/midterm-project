@@ -22,7 +22,7 @@ export default function SpaceCard({ space }) {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-slate-100 hover:shadow-md transition-all duration-300">
+    <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-slate-100 hover:shadow-xl transition-all duration-300">
       <Link to={`/space/${space.id}`} className="block">
         <div className="relative">
           <img 
