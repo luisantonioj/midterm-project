@@ -39,7 +39,7 @@ export default function SpaceDetail() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto pt-20 px-4">
+    <div className="max-w-4xl mx-auto pt-27 px-4 pb-10">
       <button 
         onClick={() => navigate(-1)} 
         className="flex items-center text-indigo-600 hover:text-indigo-800 mb-6 transition-colors"
