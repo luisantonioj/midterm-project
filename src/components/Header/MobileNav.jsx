@@ -1,10 +1,18 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-export default function MobileNav({ 
-  isMenuOpen, setIsMenuOpen, user, login, logout, isScrolled, isSolidPage, location 
+export default function MobileNav({
+  isMenuOpen,
+  setIsMenuOpen,
+  user,
+  login,
+  logout,
+  isScrolled,
+  isSolidPage,
+  location,
 }) {
-  // Always true if scrolled OR if we're on a solid page
+  const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
   const activeLight = isScrolled || isSolidPage;
 
   return (
@@ -50,52 +58,7 @@ export default function MobileNav({
           My Bookings
         </Link>
 
-        {user ? (
-          <div
-            className={`pt-3 mt-2 ${
-              activeLight ? "border-t border-slate-200" : "border-t border-white/20"
-            }`}
-          >
-            <div
-              className={`px-4 py-2 text-sm ${
-                activeLight ? "text-slate-500" : "text-white/70"
-              }`}
-            >
-              Signed in as
-            </div>
-            <div className="flex items-center px-4 py-2">
-              <div
-                className={`w-8 h-8 rounded-full flex items-center justify-center font-medium text-sm mr-3 ${
-                  activeLight
-                    ? "bg-indigo-100 text-indigo-700"
-                    : "bg-white/20 text-white"
-                }`}
-              >
-                {user.name.charAt(0).toUpperCase()}
-              </div>
-              <span
-                className={`font-medium ${
-                  activeLight ? "text-slate-800" : "text-white"
-                }`}
-              >
-                {user.name}
-              </span>
-            </div>
-            <button
-              onClick={() => {
-                logout();
-                setIsMenuOpen(false);
-              }}
-              className={`w-full text-left px-4 py-3 mt-2 rounded-lg border transition-colors ${
-                activeLight
-                  ? "border-slate-200 text-slate-700 hover:bg-slate-50"
-                  : "border-white/30 text-white hover:bg-white/10"
-              }`}
-            >
-              Logout
-            </button>
-          </div>
-        ) : (
+        {!user ? (
           <button
             onClick={() => {
               login();
@@ -110,6 +73,41 @@ export default function MobileNav({
           >
             Sign In
           </button>
+        ) : (
+          <div className="relative mt-3 px-4">
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className={`w-9 h-9 rounded-full flex items-center justify-center font-medium text-sm ${
+                activeLight ? "bg-indigo-100 text-indigo-700" : "bg-white/20 text-white"
+              }`}
+            >
+              {user.name?.charAt(0).toUpperCase()}
+            </button>
+
+            {menuOpen && (
+              <div
+                className={`absolute left-4 mt-2 w-40 rounded-lg shadow-lg overflow-hidden z-20 ${
+                  activeLight ? "bg-white" : "bg-slate-800"
+                }`}
+              >
+                <button
+                  onClick={() => {
+                    logout();
+                    setMenuOpen(false);
+                    setIsMenuOpen(false);
+                    navigate("/");
+                  }}
+                  className={`block w-full text-left px-4 py-2 text-sm ${
+                    activeLight
+                      ? "text-slate-700 hover:bg-slate-50"
+                      : "text-white hover:bg-slate-700"
+                  }`}
+                >
+                  Logout
+                </button>
+              </div>
+            )}
+          </div>
         )}
       </div>
     </div>
