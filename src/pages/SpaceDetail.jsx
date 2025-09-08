@@ -84,10 +84,18 @@ export default function SpaceDetail() {
     navigate("/dashboard/my-bookings");
   };
 
+  const handleBack = () => {
+    if (location.state?.fromHomePagination) {
+      navigate("/", { state: { page: location.state.page } });
+    } else {
+      navigate(-1);
+    }
+  };
+
   return (
     <div className="max-w-7xl mx-auto pt-26 px-4 pb-10">
       <button 
-        onClick={() => navigate(-1)} 
+        onClick={handleBack} 
         className="flex items-center text-indigo-600 hover:text-indigo-800 mb-6 transition-colors"
       >
         <i className="fas fa-arrow-left mr-2"></i> Back
