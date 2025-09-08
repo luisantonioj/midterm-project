@@ -1,6 +1,24 @@
 import React from "react";
 
-export default function SearchBar({ query, setQuery }) {
+export default function SearchBar({ query, setQuery, onSearch }) {
+  const handleSearch = () => {
+      if (onSearch) onSearch();
+      document.getElementById('spaces-grid-section')?.scrollIntoView({ behavior: 'smooth'});
+
+    setTimeout(() => {
+      const element = document.getElementById("spaces-grid-section");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: 'start' });
+      }
+    }, 50);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  };
+  
   return (
     <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden">
       <div className="flex">
@@ -17,7 +35,7 @@ export default function SearchBar({ query, setQuery }) {
             />
           </div>
         </div>
-        <button className="px-6 bg-indigo-600 hover:bg-indigo-700 text-white font-medium">
+        <button onclick={handleSearch} className="px-6 bg-indigo-600 hover:bg-indigo-700 text-white font-medium">
           Search
         </button>
       </div>
