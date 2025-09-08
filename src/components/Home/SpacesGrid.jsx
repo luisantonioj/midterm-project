@@ -9,6 +9,17 @@ export default function SpacesGrid({ spaces }) {
     setCurrentPage(1); // Reset to first page when spaces change
   }, [spaces]);
 
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+
+    setTimeout(() => {
+      const element = document.getElementById("spaces-grid-section");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: 'start' });
+      }
+    }, 50);
+  };
+
   if (spaces.length === 0) {
     return (
       <div className="text-center py-12">
@@ -28,14 +39,8 @@ export default function SpacesGrid({ spaces }) {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentSpaces = spaces.slice(startIndex, startIndex + itemsPerPage);
 
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
-    // Scroll to top when page changes
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
-    <div>
+    <div id="spaces-grid-section">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {currentSpaces.map((space) => (
           <SpaceCard key={space.id} space={space} />
