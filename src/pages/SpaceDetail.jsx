@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import spacesData from "../data/spaces.json";
 import { useAuth } from "../contexts/AuthContext.jsx";
@@ -56,6 +56,10 @@ export default function SpaceDetail() {
   const [selectedSlot, setSelectedSlot] = useState(space?.time_slots?.[0] || "");
   const [date, setDate] = useState("");
   const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    window.scrollTo(0,0);
+  }, []);
 
   if (!space) return <div className="max-w-4xl mx-auto pt-30 text-center">Space not found</div>;
 
