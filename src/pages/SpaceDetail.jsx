@@ -1,8 +1,50 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import spacesData from "../data/spaces.json"; // :contentReference[oaicite:4]{index=4}
+import spacesData from "../data/spaces.json";
 import { useAuth } from "../contexts/AuthContext.jsx";
 import { useBookings } from "../contexts/BookingContext.jsx";
+
+// Function to get emoji for amenity (case-insensitive)
+const getAmenityEmoji = (amenity) => {
+  const emojiMap = {
+    "wifi": "📶",
+    "pods": "🎧",
+    "nap": "😴",
+    "coffee": "☕",
+    "pantry": "🍽️",
+    "whiteboard": "📋",
+    "lockers": "🗄️",
+    "safety": "🛡️",
+    "ac": "❄️",
+    "desks": "💻",
+    "meeting": "🤝",
+    "virtual": "🎥",
+    "printing": "🖨️",
+    "support": "🛟",
+    "gym": "💪",
+    "cleaning": "🧹",
+    "charging": "🔋",
+    "printer": "🖨️",
+    "snacks": "🍪",
+    "books": "📚",
+    "events": "🎉",
+    "seating": "💺",
+    "power": "⚡",
+    "gaming": "🎮",
+    "24/7": "🌙",
+    "networking": "👥",
+    "ergonomic": "🪑",
+    "affordable": "💰",
+    "quiet": "🔇",
+    "refreshments": "🥤",
+    "study": "📖",
+    "private": "🔒",
+    "lounge": "🛋️"
+  };
+
+  const lowerAmenity = amenity.toLowerCase();
+  return emojiMap[lowerAmenity] || "✅";
+};
 
 export default function SpaceDetail() {
   const { spaceId } = useParams();
@@ -15,16 +57,19 @@ export default function SpaceDetail() {
   const [date, setDate] = useState("");
   const [message, setMessage] = useState("");
 
-  if (!space) return <div>Space not found</div>;
+  useEffect(() => {
+    window.scrollTo(0,0);
+  }, []);
+
+  if (!space) return <div className="max-w-4xl mx-auto pt-30 text-center">Space not found</div>;
 
   const handleBook = (e) => {
     e.preventDefault();
     if (!user) {
-      // redirect to login — simulated flow
       navigate("/login");
       return;
     }
-    // basic form. In real app validate fields.
+    
     addBooking({
       userId: user.id,
       spaceId: space.id,
@@ -34,52 +79,135 @@ export default function SpaceDetail() {
       price: space.price,
       note: message,
     });
-    // simple confirm and navigate to dashboard
+    
     alert("Booking confirmed! Go to My Bookings to view.");
     navigate("/dashboard/my-bookings");
   };
 
-  return (
-    <div className="max-w-4xl mx-auto">
-      <div className="bg-white p-6 rounded shadow">
-        <img src={space.main_image} alt={space.name} className="w-full h-64 object-cover rounded" />
-        <h2 className="mt-4 text-2xl font-semibold">{space.name}</h2>
-        <p className="text-sm text-gray-600">{space.location} • ₱{space.price}</p>
-        <p className="mt-3">{space.description}</p>
+  const handleBack = () => {
+    if (location.state?.fromHomePagination) {
+      navigate("/", { state: { page: location.state.page } });
+    } else {
+      navigate(-1);
+    }
+  };
 
-        <div className="mt-4">
-          <h3 className="font-medium">Amenities</h3>
-          <ul className="list-disc ml-5 text-sm">
-            {space.amenities.map((a, i) => <li key={i}>{a}</li>)}
-          </ul>
+  return (
+    <div className="max-w-7xl mx-auto pt-26 px-4 pb-10">
+      <button 
+        onClick={handleBack} 
+        className="flex items-center text-indigo-600 hover:text-indigo-800 mb-6 transition-colors"
+      >
+        <i className="fas fa-arrow-left mr-2"></i> Back
+      </button>
+
+      <div className="flex flex-col lg:flex-row gap-8">
+        {/* Space Details Section (Scrollable) */}
+        <div className="lg:w-2/3">
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+            <img 
+              src={space.main_image} 
+              alt={space.name} 
+              className="w-full h-72 md:h-96 object-cover" 
+            />
+            
+            <div className="p-6">
+              <div className="mb-6">
+                <h1 className="text-3xl md:text-4xl font-bold text-slate-800 mb-2">{space.name}</h1>
+                <div className="flex items-center text-slate-600 mb-2">
+                  <i className="fas fa-map-marker-alt mr-2 text-indigo-500"></i>
+                  <span>{space.location}</span>
+                </div>
+                <div className="flex items-center">
+                  <div className="flex text-amber-400 mr-2">
+                    {[...Array(5)].map((_, i) => (
+                      <i key={i} className={`fas fa-star ${i < Math.floor(space.rating) ? 'text-amber-400' : 'text-slate-300'}`}></i>
+                    ))}
+                  </div>
+                  <span className="text-slate-600 text-sm">{space.rating} ({space.reviews} reviews)</span>
+                </div>
+              </div>
+
+              <p className="text-slate-700 leading-relaxed mb-8 text-lg">{space.description}</p>
+
+              <div className="mb-8">
+                <h3 className="font-semibold text-xl text-slate-800 mb-4">Amenities</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {space.amenities.map((amenity, i) => (
+                    <div key={i} className="flex items-center bg-slate-50 px-4 py-3 rounded-lg">
+                      <span className="text-xl mr-3">{getAmenityEmoji(amenity)}</span>
+                      <span className="text-slate-700">{amenity}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <form onSubmit={handleBook} className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label className="block text-sm">Date</label>
-            <input type="date" value={date} onChange={e => setDate(e.target.value)}
-                   className="w-full border px-2 py-1 rounded" />
-          </div>
+        {/* Booking Section (Fixed) */}
+        <div className="lg:w-1/3">
+          <div className="sticky top-28 bg-white rounded-xl shadow-lg p-6">
+            <div className="text-center mb-6">
+              <div className="text-4xl font-bold text-indigo-700 mb-2">₱{space.price}</div>
+              <div className="text-slate-600">per hour</div>
+            </div>
 
-          <div>
-            <label className="block text-sm">Time slot</label>
-            <select value={selectedSlot} onChange={e => setSelectedSlot(e.target.value)}
-                    className="w-full border px-2 py-1 rounded">
-              {space.time_slots.map((t, i) => <option key={i} value={t}>{t}</option>)}
-            </select>
-          </div>
+            <form onSubmit={handleBook} className="space-y-5">
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-2">Date</label>
+                <input 
+                  type="date" 
+                  value={date} 
+                  onChange={e => setDate(e.target.value)}
+                  min={new Date().toLocaleDateString('en-CA')} // Prevent past dates
+                  className="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-indigo-500 focus:border-transparent" 
+                  required
+                />
+              </div>
 
-          <div className="md:col-span-2">
-            <label className="block text-sm">Message (optional)</label>
-            <textarea value={message} onChange={e => setMessage(e.target.value)}
-                      className="w-full border px-2 py-1 rounded" rows={3}/>
-          </div>
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-2">Time slot</label>
+                <select 
+                  value={selectedSlot} 
+                  onChange={e => setSelectedSlot(e.target.value)}
+                  className="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                  required
+                >
+                  {space.time_slots.map((time, i) => (
+                    <option key={i} value={time}>{time}</option>
+                  ))}
+                </select>
+              </div>
 
-          <div className="md:col-span-2 flex justify-between items-center">
-            {!user && <p className="text-sm text-red-500">Please log in to book. Clicking book will redirect you to login.</p>}
-            <button type="submit" className="ml-auto px-4 py-2 bg-green-600 text-white rounded">Book Now</button>
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-2">Special Requests (optional)</label>
+                <textarea 
+                  value={message} 
+                  onChange={e => setMessage(e.target.value)}
+                  className="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-indigo-500 focus:border-transparent" 
+                  rows={3}
+                  placeholder="Any special requirements or notes..."
+                />
+              </div>
+
+              <div className="pt-4">
+                {!user && (
+                  <p className="text-sm text-amber-600 mb-4 text-center">
+                    <i className="fas fa-info-circle mr-1"></i>
+                    Please log in to book
+                  </p>
+                )}
+                <button 
+                  type="submit" 
+                  className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-6 rounded-lg transition-colors duration-200 text-lg"
+                >
+                  {user ? "Book Now" : "Login to Book"}
+                </button>
+              </div>
+            </form>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   );

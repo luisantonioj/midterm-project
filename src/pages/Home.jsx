@@ -78,7 +78,7 @@ export default function Home() {
         toggleAmenity={toggleAmenity}
       />
 
-      <div className="px-4 py-12 max-w-7xl mx-auto">
+      <div className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Filters
           amenityOptions={amenityOptions}
           selectedAmenities={selectedAmenities}

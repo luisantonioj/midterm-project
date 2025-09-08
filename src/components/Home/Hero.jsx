@@ -43,7 +43,7 @@ export default function Hero({
         <div className="text-center px-4 max-w-4xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             Find Your Perfect
-            <span className="block text-indigo-400">Study Space</span>
+            <span className="block text-indigo-400" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'}}>Study Space</span>
           </h1>
           <p className="text-xl text-slate-200 max-w-3xl mx-auto mb-10">
             Discover and book the best co-working spaces and study hubs across
@@ -52,7 +52,7 @@ export default function Hero({
 
           <SearchBar query={query} setQuery={setQuery} />
 
-          {/* Quick Filters */}
+          {/* Quick Filters
           <div className="mt-8 flex flex-wrap justify-center gap-2">
             {amenityOptions.slice(0, 4).map((amenity) => (
               <button
@@ -67,7 +67,7 @@ export default function Hero({
                 <span className="capitalize">{amenity}</span>
               </button>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
