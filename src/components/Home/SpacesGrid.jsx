@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SpaceCard from "../../components/SpaceCard";
 
 export default function SpacesGrid({ spaces }) {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6; // Number of items per page
+
+  useEffect(() => {
+    setCurrentPage(1); // Reset to first page when spaces change
+  }, [spaces]);
 
   if (spaces.length === 0) {
     return (
