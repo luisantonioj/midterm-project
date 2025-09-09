@@ -40,35 +40,45 @@ export default function MyBookings() {
         </div>
       ) : (
         <div className="space-y-4">
-          {myBookings.map((b) => (
-            <div key={b.id} className="bg-white rounded-xl shadow-sm p-6 flex flex-col md:flex-row justify-between items-start md:items-center transition-all hover:shadow-md">
-              <div className="flex-1 mb-4 md:mb-0">
-                <div className="flex items-center gap-2 mb-2">
-                  <h3 className="font-semibold text-lg text-gray-800">{b.spaceName}</h3>
-                  <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
-                    {b.timeSlot}
-                  </span>
-                </div>
-                <div className="text-gray-600 mb-1">
-                  <span className="font-medium">Date:</span> {b.date}
-                </div>
-                <div className="text-gray-600 mb-1">
-                  <span className="font-medium">Price:</span> ₱{b.price}
-                </div>
-                {b.note && (
-                  <div className="text-gray-600 mt-2">
-                    <span className="font-medium">Note:</span> {b.note}
+          {myBookings.map((b) => {
+            const isCompleted = new Date(b.date) < new Date();
+            const displayStatus = isCompleted ? "Completed" : b.timeSlot;
+            const statusClass = isCompleted 
+              ? "bg-green-100 text-green-800" 
+              : "bg-blue-100 text-blue-800";
+
+            return (
+              <div key={b.id} className="bg-white rounded-xl shadow-sm p-6 flex flex-col md:flex-row justify-between items-start md:items-center transition-all hover:shadow-md">
+                <div className="flex-1 mb-4 md:mb-0">
+                  <div className="flex items-center gap-2 mb-2">
+                    <h3 className="font-semibold text-lg text-gray-800">{b.spaceName}</h3>
+                    <span className={`text-xs font-medium px-2.5 py-0.5 rounded-full ${statusClass}`}>
+                      {displayStatus}
+                    </span>
                   </div>
+                  <div className="text-gray-600 mb-1">
+                    <span className="font-medium">Date:</span> {b.date}
+                  </div>
+                  <div className="text-gray-600 mb-1">
+                    <span className="font-medium">Price:</span> ₱{b.price}
+                  </div>
+                  {b.note && (
+                    <div className="text-gray-600 mt-2">
+                      <span className="font-medium">Note:</span> {b.note}
+                    </div>
+                  )}
+                </div>
+                {!isCompleted && (
+                  <button 
+                    onClick={() => setSelectedCancel(b.id)} 
+                    className="px-4 py-2 bg-white border border-red-300 text-red-600 rounded-lg hover:bg-red-50 transition-colors focus:outline-none focus:ring-2 focus:ring-red-200"
+                  >
+                    Cancel
+                  </button>
                 )}
               </div>
-              <button 
-                onClick={() => setSelectedCancel(b.id)} 
-                className="px-4 py-2 bg-white border border-red-300 text-red-600 rounded-lg hover:bg-red-50 transition-colors focus:outline-none focus:ring-2 focus:ring-red-200"
-              >
-                Cancel
-              </button>
-            </div>
-          ))}
+            );
+          })}
         </div>
       )}
 
