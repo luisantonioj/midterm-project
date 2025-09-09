@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect } from "react";
 import spacesData from "../data/spaces.json";
-import SpaceCard from "../components/SpaceCard";
+import SpaceCard from "../components/Home/SpaceCard";
 import Hero from "../components/Home/Hero";
 import SearchBar from "../components/Home/SearchBar";
 import Filters from "../components/Home/Filters";

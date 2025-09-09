@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import { useBookings } from "../contexts/BookingContext";
-import ConfirmModal from "../components/ConfirmModal";
+import ConfirmModal from "../components/MyBookings/ConfirmModal";
 import Login from "./Login";
 
-export default function Dashboard() {
+export default function MyBookings() {
   const { user } = useAuth();
   const { bookings, cancelBooking } = useBookings();
 

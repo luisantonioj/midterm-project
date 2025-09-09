@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SpaceCard from "../../components/SpaceCard";
+import SpaceCard from "../../components/Home/SpaceCard";
 
 export default function SpacesGrid({ spaces }) {
   const [currentPage, setCurrentPage] = useState(1);
