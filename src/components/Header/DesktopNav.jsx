@@ -39,9 +39,9 @@ export default function DesktopNav({ user, login, logout, isScrolled, isSolidPag
       </Link>
 
       <Link
-        to="/dashboard/my-bookings"
+        to="/my-bookings"
         className={`px-4 py-2.5 rounded-lg transition-all duration-200 ${
-          location.pathname.startsWith("/dashboard")
+          location.pathname.startsWith("/my-bookings")
             ? activeLight
               ? "bg-indigo-50 text-indigo-700 font-medium shadow-sm"
               : "bg-white/20 text-white font-medium"
@@ -57,7 +57,7 @@ export default function DesktopNav({ user, login, logout, isScrolled, isSolidPag
         <button
           onClick={() => {
             login();
-            navigate("/dashboard/my-bookings");
+            navigate("/my-bookings");
           }}
           className={`px-4 py-2 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg ${
             activeLight

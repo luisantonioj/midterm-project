@@ -43,9 +43,9 @@ export default function MobileNav({
         </Link>
 
         <Link
-          to="/dashboard/my-bookings"
+          to="/my-bookings"
           className={`px-4 py-3 rounded-lg transition-colors ${
-            location.pathname.startsWith("/dashboard")
+            location.pathname.startsWith("/my-bookings")
               ? activeLight
                 ? "bg-indigo-50 text-indigo-700 font-medium"
                 : "bg-white/20 text-white font-medium"
@@ -63,7 +63,7 @@ export default function MobileNav({
             onClick={() => {
               login();
               setIsMenuOpen(false);
-              navigate("/dashboard/my-bookings");
+              navigate("/my-bookings");
             }}
             className={`w-full text-left px-4 py-3 mt-2 rounded-lg transition-all duration-200 ${
               activeLight
