@@ -8,7 +8,7 @@ export default function Login() {
 
   const handleLogin = () => {
     login();
-    navigate("/dashboard/my-bookings");
+    navigate("/my-bookings");
   };
 
   return (

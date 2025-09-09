@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import SpaceDetail from "./pages/SpaceDetail";
-import Dashboard from "./pages/MyBookings";
+import Bookings from "./pages/MyBookings";
 import Login from "./pages/Login";
 import Header from "./components/Header/Header";
 import ProtectedRoute from "./utils/protectedRoute";
@@ -18,10 +18,10 @@ export default function App() {
           <Route path="/space/:spaceId" element={<SpaceDetail />} />
           <Route path="/login" element={<Login />} />
           <Route
-            path="/dashboard/my-bookings"
+            path="/my-bookings"
             element={
               <ProtectedRoute>
-                <Dashboard />
+                <Bookings />
               </ProtectedRoute>
             }
           />

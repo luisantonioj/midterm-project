@@ -19,10 +19,10 @@ export default function Header() {
   }, []);
 
   // Force solid background for certain pages
-  const isDashboard = location.pathname.startsWith("/dashboard");
+  const isBookings = location.pathname.startsWith("/my-bookings");
   const isAuthPage = location.pathname.startsWith("/auth") || location.pathname.startsWith("/login");
   const isSpacePage = location.pathname.startsWith("/space");
-  const isSolidPage = isDashboard || isAuthPage || isSpacePage || isScrolled;
+  const isSolidPage = isBookings || isAuthPage || isSpacePage || isScrolled;
   
   return (
     <header
