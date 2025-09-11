@@ -13,23 +13,7 @@
     },
     "amenities": ["wifi", "pods", "nap", "coffee", "pantry", "whiteboard", "lockers", "safety", "ac"],
     "hours": "8:00 AM - 10:00 PM",
-    "time_slots": [
-      {
-        "start": "08:00",
-        "end": "12:00",
-        "label": "8:00 AM - 12:00 PM"
-      },
-      {
-        "start": "12:00",
-        "end": "16:00",
-        "label": "12:00 PM - 4:00 PM"
-      },
-      {
-        "start": "16:00",
-        "end": "20:00",
-        "label": "4:00 PM - 8:00 PM"
-      }
-    ],
+    "time_slots": ["8:00 AM - 12:00 PM", "12:00 PM - 4:00 PM", "4:00 PM - 8:00 PM"],
     "rating": 4.8,
     "reviews": 124
   },
@@ -47,18 +31,7 @@
     },
     "amenities": ["wifi", "desks", "meeting", "virtual", "coffee", "printing", "support", "gym", "ac", "cleaning"],
     "hours": "Open 24/7",
-    "time_slots": [
-      {
-        "start": "00:00",
-        "end": "23:59",
-        "label": "Full Day Pass"
-      },
-      {
-        "start": "21:00",
-        "end": "06:00",
-        "label": "Night Owl Pass (9:00 PM - 6:00 AM)"
-      }
-    ],
+    "time_slots": ["Full Day Pass", "Night Owl Pass (9:00 PM - 6:00 AM)"],
     "rating": 4.7,
     "reviews": 210
   },
@@ -76,23 +49,7 @@
     },
     "amenities": ["wifi", "coffee", "ac", "desks", "charging", "printer", "snacks", "books"],
     "hours": "9:00 AM - 9:00 PM",
-    "time_slots": [
-      {
-        "start": "09:00",
-        "end": "13:00",
-        "label": "9:00 AM - 1:00 PM"
-      },
-      {
-        "start": "13:00",
-        "end": "17:00",
-        "label": "1:00 PM - 5:00 PM"
-      },
-      {
-        "start": "17:00",
-        "end": "21:00",
-        "label": "5:00 PM - 9:00 PM"
-      }
-    ],
+    "time_slots": ["9:00 AM - 1:00 PM", "1:00 PM - 5:00 PM", "5:00 PM - 9:00 PM"],
     "rating": 4.6,
     "reviews": 189
   },
@@ -110,23 +67,7 @@
     },
     "amenities": ["wifi", "meeting", "ac", "coffee", "printer", "events", "lockers", "seating"],
     "hours": "8:00 AM - 8:00 PM",
-    "time_slots": [
-      {
-        "start": "08:00",
-        "end": "12:00",
-        "label": "8:00 AM - 12:00 PM"
-      },
-      {
-        "start": "12:00",
-        "end": "16:00",
-        "label": "12:00 PM - 4:00 PM"
-      },
-      {
-        "start": "16:00",
-        "end": "20:00",
-        "label": "4:00 PM - 8:00 PM"
-      }
-    ],
+    "time_slots": ["8:00 AM - 12:00 PM", "12:00 PM - 4:00 PM", "4:00 PM - 8:00 PM"],
     "rating": 4.4,
     "reviews": 95
   },
@@ -144,23 +85,7 @@
     },
     "amenities": ["wifi", "desks", "ac", "snacks", "power", "events", "whiteboard", "gaming"],
     "hours": "9:00 AM - 10:00 PM",
-    "time_slots": [
-      {
-        "start": "09:00",
-        "end": "13:00",
-        "label": "9:00 AM - 1:00 PM"
-      },
-      {
-        "start": "13:00",
-        "end": "17:00",
-        "label": "1:00 PM - 5:00 PM"
-      },
-      {
-        "start": "17:00",
-        "end": "21:00",
-        "label": "5:00 PM - 9:00 PM"
-      }
-    ],
+    "time_slots": ["9:00 AM - 1:00 PM", "1:00 PM - 5:00 PM", "5:00 PM - 9:00 PM"],
     "rating": 4.2,
     "reviews": 47
   },
@@ -171,25 +96,14 @@
     "price": 350,
     "main_image": "/images/6-thecompany/6.1.jpg",
     "images": ["/assets/company1.jpg", "/assets/company2.jpg"],
-    "description": "A leading co-working hub in Cebu's IT Park, offering flexible spaces for startups, students, and digital nomads.",
+    "description": "A leading co-working hub in Cebu’s IT Park, offering flexible spaces for startups, students, and digital nomads.",
     "tag": {
       "type": "premium",
       "label": "Premium"
     },
     "amenities": ["wifi", "events", "meeting", "ac", "pantry", "24/7", "networking", "ergonomic"],
     "hours": "Open 24/7",
-    "time_slots": [
-      {
-        "start": "00:00",
-        "end": "23:59",
-        "label": "Full Day Pass"
-      },
-      {
-        "start": "21:00",
-        "end": "06:00",
-        "label": "Night Owl Pass (9:00 PM - 6:00 AM)"
-      }
-    ],
+    "time_slots": ["Full Day Pass", "Night Owl Pass (9:00 PM - 6:00 AM)"],
     "rating": 4.9,
     "reviews": 312
   },
@@ -207,23 +121,7 @@
     },
     "amenities": ["wifi", "ac", "affordable", "snacks", "power", "quiet", "printer", "seating"],
     "hours": "9:00 AM - 9:00 PM",
-    "time_slots": [
-      {
-        "start": "09:00",
-        "end": "13:00",
-        "label": "9:00 AM - 1:00 PM"
-      },
-      {
-        "start": "13:00",
-        "end": "17:00",
-        "label": "1:00 PM - 5:00 PM"
-      },
-      {
-        "start": "17:00",
-        "end": "21:00",
-        "label": "5:00 PM - 9:00 PM"
-      }
-    ],
+    "time_slots": ["9:00 AM - 1:00 PM", "1:00 PM - 5:00 PM", "5:00 PM - 9:00 PM"],
     "rating": 4.3,
     "reviews": 78
   },
@@ -241,23 +139,7 @@
     },
     "amenities": ["wifi", "ac", "printing", "desks", "refreshments", "events", "lockers", "study"],
     "hours": "8:00 AM - 10:00 PM",
-    "time_slots": [
-      {
-        "start": "08:00",
-        "end": "12:00",
-        "label": "8:00 AM - 12:00 PM"
-      },
-      {
-        "start": "12:00",
-        "end": "16:00",
-        "label": "12:00 PM - 4:00 PM"
-      },
-      {
-        "start": "16:00",
-        "end": "20:00",
-        "label": "4:00 PM - 8:00 PM"
-      }
-    ],
+    "time_slots": ["8:00 AM - 12:00 PM", "12:00 PM - 4:00 PM", "4:00 PM - 8:00 PM"],
     "rating": 4.1,
     "reviews": 52
   },
@@ -275,23 +157,7 @@
     },
     "amenities": ["wifi", "events", "private", "ac", "coffee", "networking", "pantry", "seating"],
     "hours": "8:00 AM - 11:00 PM",
-    "time_slots": [
-      {
-        "start": "08:00",
-        "end": "12:00",
-        "label": "8:00 AM - 12:00 PM"
-      },
-      {
-        "start": "12:00",
-        "end": "16:00",
-        "label": "12:00 PM - 4:00 PM"
-      },
-      {
-        "start": "16:00",
-        "end": "20:00",
-        "label": "4:00 PM - 8:00 PM"
-      }
-    ],
+    "time_slots": ["8:00 AM - 12:00 PM", "12:00 PM - 4:00 PM", "4:00 PM - 8:00 PM"],
     "rating": 4.5,
     "reviews": 134
   },
@@ -309,23 +175,7 @@
     },
     "amenities": ["wifi", "ergonomic", "ac", "printing", "snacks", "private", "lockers", "lounge"],
     "hours": "9:00 AM - 10:00 PM",
-    "time_slots": [
-      {
-        "start": "09:00",
-        "end": "13:00",
-        "label": "9:00 AM - 1:00 PM"
-      },
-      {
-        "start": "13:00",
-        "end": "17:00",
-        "label": "1:00 PM - 5:00 PM"
-      },
-      {
-        "start": "17:00",
-        "end": "21:00",
-        "label": "5:00 PM - 9:00 PM"
-      }
-    ],
+    "time_slots": ["9:00 AM - 1:00 PM", "1:00 PM - 5:00 PM", "5:00 PM - 9:00 PM"],
     "rating": 4.2,
     "reviews": 66
   },
@@ -343,23 +193,7 @@
     "tag": { "type": "popular", "label": "Popular" },
     "amenities": ["wifi", "desks", "coffee", "meeting", "events", "ac"],
     "hours": "8:00 AM - 9:00 PM",
-    "time_slots": [
-      {
-        "start": "08:00",
-        "end": "12:00",
-        "label": "8:00 AM - 12:00 PM"
-      },
-      {
-        "start": "13:00",
-        "end": "17:00",
-        "label": "1:00 PM - 5:00 PM"
-      },
-      {
-        "start": "17:00",
-        "end": "21:00",
-        "label": "5:00 PM - 9:00 PM"
-      }
-    ],
+    "time_slots": ["8:00 AM - 12:00 PM", "1:00 PM - 5:00 PM", "5:00 PM - 9:00 PM"],
     "rating": 4.4,
     "reviews": 89
   },
@@ -377,18 +211,7 @@
     "tag": { "type": "premium", "label": "Premium" },
     "amenities": ["wifi", "meeting", "events", "coffee", "lounge", "ac"],
     "hours": "Open 24/7",
-    "time_slots": [
-      {
-        "start": "00:00",
-        "end": "23:59",
-        "label": "Full Day Pass"
-      },
-      {
-        "start": "18:00",
-        "end": "00:00",
-        "label": "Evening Pass (6:00 PM - 12:00 MN)"
-      }
-    ],
+    "time_slots": ["Full Day Pass", "Evening Pass (6:00 PM - 12:00 MN)"],
     "rating": 4.8,
     "reviews": 192
   },
@@ -406,23 +229,7 @@
     "tag": { "type": "budget", "label": "Budget" },
     "amenities": ["wifi", "coffee", "quiet", "snacks", "desks", "books"],
     "hours": "7:00 AM - 9:00 PM",
-    "time_slots": [
-      {
-        "start": "07:00",
-        "end": "12:00",
-        "label": "7:00 AM - 12:00 PM"
-      },
-      {
-        "start": "13:00",
-        "end": "18:00",
-        "label": "1:00 PM - 6:00 PM"
-      },
-      {
-        "start": "18:00",
-        "end": "21:00",
-        "label": "6:00 PM - 9:00 PM"
-      }
-    ],
+    "time_slots": ["7:00 AM - 12:00 PM", "1:00 PM - 6:00 PM", "6:00 PM - 9:00 PM"],
     "rating": 4.1,
     "reviews": 73
   },
@@ -440,18 +247,7 @@
     "tag": { "type": "premium", "label": "Premium" },
     "amenities": ["wifi", "private", "lounge", "coffee", "printing", "ac"],
     "hours": "Open 24/7",
-    "time_slots": [
-      {
-        "start": "00:00",
-        "end": "23:59",
-        "label": "Full Day Pass"
-      },
-      {
-        "start": "20:00",
-        "end": "06:00",
-        "label": "Night Pass (8:00 PM - 6:00 AM)"
-      }
-    ],
+    "time_slots": ["Full Day Pass", "Night Pass (8:00 PM - 6:00 AM)"],
     "rating": 4.9,
     "reviews": 220
   },
@@ -469,23 +265,7 @@
     "tag": { "type": "standard", "label": "Standard" },
     "amenities": ["wifi", "ac", "desks", "power", "printer", "refreshments"],
     "hours": "9:00 AM - 10:00 PM",
-    "time_slots": [
-      {
-        "start": "09:00",
-        "end": "13:00",
-        "label": "9:00 AM - 1:00 PM"
-      },
-      {
-        "start": "13:00",
-        "end": "17:00",
-        "label": "1:00 PM - 5:00 PM"
-      },
-      {
-        "start": "17:00",
-        "end": "22:00",
-        "label": "5:00 PM - 10:00 PM"
-      }
-    ],
+    "time_slots": ["9:00 AM - 1:00 PM", "1:00 PM - 5:00 PM", "5:00 PM - 10:00 PM"],
     "rating": 4.3,
     "reviews": 61
   },
@@ -503,23 +283,7 @@
     "tag": { "type": "new", "label": "New" },
     "amenities": ["wifi", "meeting", "coffee", "events", "desks", "snacks"],
     "hours": "8:00 AM - 8:00 PM",
-    "time_slots": [
-      {
-        "start": "08:00",
-        "end": "12:00",
-        "label": "8:00 AM - 12:00 PM"
-      },
-      {
-        "start": "12:00",
-        "end": "16:00",
-        "label": "12:00 PM - 4:00 PM"
-      },
-      {
-        "start": "16:00",
-        "end": "20:00",
-        "label": "4:00 PM - 8:00 PM"
-      }
-    ],
+    "time_slots": ["8:00 AM - 12:00 PM", "12:00 PM - 4:00 PM", "4:00 PM - 8:00 PM"],
     "rating": 4.2,
     "reviews": 44
   },
@@ -537,23 +301,7 @@
     "tag": { "type": "standard", "label": "Standard" },
     "amenities": ["wifi", "ac", "ergonomic", "coffee", "printing", "support"],
     "hours": "8:00 AM - 10:00 PM",
-    "time_slots": [
-      {
-        "start": "08:00",
-        "end": "13:00",
-        "label": "8:00 AM - 1:00 PM"
-      },
-      {
-        "start": "13:00",
-        "end": "17:00",
-        "label": "1:00 PM - 5:00 PM"
-      },
-      {
-        "start": "17:00",
-        "end": "22:00",
-        "label": "5:00 PM - 10:00 PM"
-      }
-    ],
+    "time_slots": ["8:00 AM - 1:00 PM", "1:00 PM - 5:00 PM", "5:00 PM - 10:00 PM"],
     "rating": 4.5,
     "reviews": 97
   },
@@ -571,23 +319,7 @@
     "tag": { "type": "popular", "label": "Popular" },
     "amenities": ["wifi", "coffee", "ergonomic", "snacks", "ac", "lounge"],
     "hours": "9:00 AM - 11:00 PM",
-    "time_slots": [
-      {
-        "start": "09:00",
-        "end": "13:00",
-        "label": "9:00 AM - 1:00 PM"
-      },
-      {
-        "start": "13:00",
-        "end": "18:00",
-        "label": "1:00 PM - 6:00 PM"
-      },
-      {
-        "start": "18:00",
-        "end": "23:00",
-        "label": "6:00 PM - 11:00 PM"
-      }
-    ],
+    "time_slots": ["9:00 AM - 1:00 PM", "1:00 PM - 6:00 PM", "6:00 PM - 11:00 PM"],
     "rating": 4.6,
     "reviews": 155
   },
@@ -605,23 +337,7 @@
     "tag": { "type": "budget", "label": "Budget" },
     "amenities": ["wifi", "quiet", "ac", "power", "seating"],
     "hours": "8:00 AM - 8:00 PM",
-    "time_slots": [
-      {
-        "start": "08:00",
-        "end": "12:00",
-        "label": "8:00 AM - 12:00 PM"
-      },
-      {
-        "start": "12:00",
-        "end": "16:00",
-        "label": "12:00 PM - 4:00 PM"
-      },
-      {
-        "start": "16:00",
-        "end": "20:00",
-        "label": "4:00 PM - 8:00 PM"
-      }
-    ],
+    "time_slots": ["8:00 AM - 12:00 PM", "12:00 PM - 4:00 PM", "4:00 PM - 8:00 PM"],
     "rating": 4.0,
     "reviews": 40
   },
@@ -639,18 +355,7 @@
     "tag": { "type": "premium", "label": "Premium" },
     "amenities": ["wifi", "events", "lounge", "networking", "coffee", "ac"],
     "hours": "Open 24/7",
-    "time_slots": [
-      {
-        "start": "00:00",
-        "end": "23:59",
-        "label": "Full Day Pass"
-      },
-      {
-        "start": "21:00",
-        "end": "06:00",
-        "label": "Night Owl Pass (9:00 PM - 6:00 AM)"
-      }
-    ],
+    "time_slots": ["Full Day Pass", "Night Owl Pass (9:00 PM - 6:00 AM)"],
     "rating": 4.7,
     "reviews": 185
   }
