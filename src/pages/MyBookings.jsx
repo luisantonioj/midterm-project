@@ -62,17 +62,14 @@ export default function MyBookings() {
             const isUpcoming = !isCompleted;
             
             return (
-              <div key={b.id} className="bg-white rounded-xl shadow-sm p-6 transition-all hover:shadow-md border border-gray-100">
+              <div key={b.id} className="bg-white rounded-xl shadow-sm p-6 transition-all hover:shadow-md border border-gray-100 pb-2">
                 <div className="flex flex-col md:flex-row justify-between">
                   <div className="flex-1">
-                    <div className="flex items-start justify-between mb-3">
+                    <div className="flex items-start justify-between mb-1">
                       <h3 className="font-bold text-xl text-gray-900">{b.spaceName}</h3>
-                      {/* <span className={`text-xs font-semibold px-3 py-1 rounded-full ${isCompleted ? "bg-gray-100 text-gray-700" : "bg-blue-100 text-blue-700"}`}>
-                        {isCompleted ? "Completed" : "Upcoming"}
-                      </span> */}
                     </div>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
+                    <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr_1fr] gap-3 mb-4">
                       <div className="flex items-center text-gray-700">
                         <svg className="w-5 h-5 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
@@ -91,7 +88,7 @@ export default function MyBookings() {
                         <svg className="w-5 h-5 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
-                        <span>₱{b.price}</span>
+                        <span>₱{b.price}.00</span>
                       </div>
 
                       <div className="flex items-center text-gray-700">
