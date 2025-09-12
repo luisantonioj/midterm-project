@@ -30,7 +30,7 @@ export default function SearchBar({ query, setQuery, onSearch }) {
             <input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search by location, space name, or amenity..."
+              placeholder="Search by location or space name..."
               className="block w-full pl-10 pr-3 py-4 border-0 text-slate-900 placeholder-slate-500 focus:outline-none"
             />
           </div>

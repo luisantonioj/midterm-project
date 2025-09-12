@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Studeo Spaces",
     "location": "Sampaloc, Manila",
-    "price": 150,
+    "price": 250,
     "main_image": "https://studeospaces.com/wp-content/uploads/2024/06/Studeo-Spaces-Study-Area-4-768x1024.jpg",
     "images": ["/assets/studeo1.jpg", "/assets/studeo2.jpg"],
     "description": "A modern study and co-working hub located in Sampaloc, Manila. Perfect for students and freelancers looking for a productive environment.",
@@ -13,7 +13,11 @@
     },
     "amenities": ["wifi", "pods", "nap", "coffee", "pantry", "whiteboard", "lockers", "safety", "ac"],
     "hours": "8:00 AM - 10:00 PM",
-    "time_slots": ["8:00 AM - 12:00 PM", "12:00 PM - 4:00 PM", "4:00 PM - 8:00 PM"],
+    "time_slots": [
+      { "label": "Morning Slot", "start": "08:00", "end": "12:00" },
+      { "label": "Afternoon Slot", "start": "12:00", "end": "16:00" },
+      { "label": "Evening Slot", "start": "16:00", "end": "20:00" }
+    ],
     "rating": 4.8,
     "reviews": 124
   },
@@ -21,17 +25,20 @@
     "id": 2,
     "name": "WorkHaven",
     "location": "Makati City",
-    "price": 300,
+    "price": 200,
     "main_image": "/images/2-workhaven/2.1.jpg",
     "images": ["/assets/workhaven1.jpg", "/assets/workhaven2.jpg"],
     "description": "A professional co-working environment in the heart of Makati. Ideal for business meetings, collaborations, and networking.",
     "tag": {
-      "type": "premium",
-      "label": "Premium"
+      "type": "standard",
+      "label": "Standard"
     },
     "amenities": ["wifi", "desks", "meeting", "virtual", "coffee", "printing", "support", "gym", "ac", "cleaning"],
     "hours": "Open 24/7",
-    "time_slots": ["Full Day Pass", "Night Owl Pass (9:00 PM - 6:00 AM)"],
+    "time_slots": [
+      { "label": "Full Day Pass", "start": "00:00", "end": "23:59" },
+      { "label": "Night Owl Pass", "start": "21:00", "end": "06:00" }
+    ],
     "rating": 4.7,
     "reviews": 210
   },
@@ -39,7 +46,7 @@
     "id": 3,
     "name": "Beanspace",
     "location": "Commonwealth Ave., Quezon City",
-    "price": 120,
+    "price": 320,
     "main_image": "/images/3-beanspace/3.1.jpeg",
     "images": ["/assets/beanspace1.jpg", "/assets/beanspace2.jpg"],
     "description": "A cozy and stylish study cafe offering an inspiring environment for students and professionals.",
@@ -49,7 +56,11 @@
     },
     "amenities": ["wifi", "coffee", "ac", "desks", "charging", "printer", "snacks", "books"],
     "hours": "9:00 AM - 9:00 PM",
-    "time_slots": ["9:00 AM - 1:00 PM", "1:00 PM - 5:00 PM", "5:00 PM - 9:00 PM"],
+    "time_slots": [
+      { "label": "Morning Slot", "start": "09:00", "end": "13:00" },
+      { "label": "Afternoon Slot", "start": "13:00", "end": "17:00" },
+      { "label": "Evening Slot", "start": "17:00", "end": "21:00" }
+    ],
     "rating": 4.6,
     "reviews": 189
   },
@@ -57,7 +68,7 @@
     "id": 4,
     "name": "Big Ideas Cowork and Study Space",
     "location": "San Fernando, Pampanga",
-    "price": 150,
+    "price": 220,
     "main_image": "/images/4-bigideas/4.1.jpg",
     "images": ["/assets/bigideas1.jpg", "/assets/bigideas2.jpg"],
     "description": "A collaborative space in Pampanga for students, freelancers, and entrepreneurs to innovate and work productively.",
@@ -67,7 +78,11 @@
     },
     "amenities": ["wifi", "meeting", "ac", "coffee", "printer", "events", "lockers", "seating"],
     "hours": "8:00 AM - 8:00 PM",
-    "time_slots": ["8:00 AM - 12:00 PM", "12:00 PM - 4:00 PM", "4:00 PM - 8:00 PM"],
+    "time_slots": [
+      { "label": "Morning Slot", "start": "08:00", "end": "12:00" },
+      { "label": "Afternoon Slot", "start": "12:00", "end": "16:00" },
+      { "label": "Evening Slot", "start": "16:00", "end": "20:00" }
+    ],
     "rating": 4.4,
     "reviews": 95
   },
@@ -75,7 +90,7 @@
     "id": 5,
     "name": "The Playground PH",
     "location": "Lipa City, Batangas",
-    "price": 100,
+    "price": 350,
     "main_image": "/images/5-theplayground/5.1.png",
     "images": ["/assets/playground1.jpg", "/assets/playground2.jpg"],
     "description": "A youthful and creative study hub in Batangas, designed to help students and professionals maximize productivity.",
@@ -85,7 +100,11 @@
     },
     "amenities": ["wifi", "desks", "ac", "snacks", "power", "events", "whiteboard", "gaming"],
     "hours": "9:00 AM - 10:00 PM",
-    "time_slots": ["9:00 AM - 1:00 PM", "1:00 PM - 5:00 PM", "5:00 PM - 9:00 PM"],
+    "time_slots": [
+      { "label": "Morning Slot", "start": "09:00", "end": "13:00" },
+      { "label": "Afternoon Slot", "start": "13:00", "end": "17:00" },
+      { "label": "Evening Slot", "start": "17:00", "end": "21:00" }
+    ],
     "rating": 4.2,
     "reviews": 47
   },
@@ -93,7 +112,7 @@
     "id": 6,
     "name": "The Company",
     "location": "Cebu City",
-    "price": 350,
+    "price": 500,
     "main_image": "/images/6-thecompany/6.1.jpg",
     "images": ["/assets/company1.jpg", "/assets/company2.jpg"],
     "description": "A leading co-working hub in Cebu’s IT Park, offering flexible spaces for startups, students, and digital nomads.",
@@ -103,7 +122,10 @@
     },
     "amenities": ["wifi", "events", "meeting", "ac", "pantry", "24/7", "networking", "ergonomic"],
     "hours": "Open 24/7",
-    "time_slots": ["Full Day Pass", "Night Owl Pass (9:00 PM - 6:00 AM)"],
+    "time_slots": [
+      { "label": "Full Day Pass", "start": "00:00", "end": "23:59" },
+      { "label": "Night Owl Pass", "start": "21:00", "end": "06:00" }
+    ],
     "rating": 4.9,
     "reviews": 312
   },
@@ -111,7 +133,7 @@
     "id": 7,
     "name": "StudyOut",
     "location": "Dumaguete City",
-    "price": 80,
+    "price": 150,
     "main_image": "/images/7-studyout/7.1.jpg",
     "images": ["/assets/studyout1.jpg", "/assets/studyout2.jpg"],
     "description": "A community-driven study space in Dumaguete, ideal for students looking for a quiet and budget-friendly environment.",
@@ -121,7 +143,11 @@
     },
     "amenities": ["wifi", "ac", "affordable", "snacks", "power", "quiet", "printer", "seating"],
     "hours": "9:00 AM - 9:00 PM",
-    "time_slots": ["9:00 AM - 1:00 PM", "1:00 PM - 5:00 PM", "5:00 PM - 9:00 PM"],
+    "time_slots": [
+      { "label": "Morning", "start": "09:00", "end": "13:00" },
+      { "label": "Afternoon", "start": "13:00", "end": "17:00" },
+      { "label": "Evening", "start": "17:00", "end": "21:00" }
+    ],
     "rating": 4.3,
     "reviews": 78
   },
@@ -129,7 +155,7 @@
     "id": 8,
     "name": "SharedSpace",
     "location": "Tacloban City",
-    "price": 120,
+    "price": 200,
     "main_image": "/images/8-sharedspace/8.1.jpg",
     "images": ["/assets/sharedspace1.jpg", "/assets/sharedspace2.jpg"],
     "description": "A collaborative study and work hub in Tacloban, providing affordable and flexible seating for students and professionals.",
@@ -139,7 +165,11 @@
     },
     "amenities": ["wifi", "ac", "printing", "desks", "refreshments", "events", "lockers", "study"],
     "hours": "8:00 AM - 10:00 PM",
-    "time_slots": ["8:00 AM - 12:00 PM", "12:00 PM - 4:00 PM", "4:00 PM - 8:00 PM"],
+    "time_slots": [
+      { "label": "Morning", "start": "08:00", "end": "12:00" },
+      { "label": "Afternoon", "start": "12:00", "end": "16:00" },
+      { "label": "Evening", "start": "16:00", "end": "20:00" }
+    ],
     "rating": 4.1,
     "reviews": 52
   },
@@ -147,7 +177,7 @@
     "id": 9,
     "name": "Co.Lab",
     "location": "Davao City",
-    "price": 200,
+    "price": 220,
     "main_image": "/images/9-co.lab/9.1.jpg",
     "images": ["/assets/colab1.jpg", "/assets/colab2.jpg"],
     "description": "A dynamic co-working space in Davao City built for collaboration, networking, and productive work sessions.",
@@ -157,7 +187,11 @@
     },
     "amenities": ["wifi", "events", "private", "ac", "coffee", "networking", "pantry", "seating"],
     "hours": "8:00 AM - 11:00 PM",
-    "time_slots": ["8:00 AM - 12:00 PM", "12:00 PM - 4:00 PM", "4:00 PM - 8:00 PM"],
+    "time_slots": [
+      { "label": "Morning", "start": "08:00", "end": "12:00" },
+      { "label": "Afternoon", "start": "12:00", "end": "16:00" },
+      { "label": "Evening", "start": "16:00", "end": "20:00" }
+    ],
     "rating": 4.5,
     "reviews": 134
   },
@@ -165,7 +199,7 @@
     "id": 10,
     "name": "SmartWork Studyhub & Workspace",
     "location": "Cagayan De Oro City",
-    "price": 150,
+    "price": 200,
     "main_image": "/images/10-smartwork/10.1.jpg",
     "images": ["/assets/sartwork1.jpg", "/assets/smartwork2.jpg"],
     "description": "A modern study hub and workspace in CDO offering flexible workstations and affordable study rates.",
@@ -175,7 +209,11 @@
     },
     "amenities": ["wifi", "ergonomic", "ac", "printing", "snacks", "private", "lockers", "lounge"],
     "hours": "9:00 AM - 10:00 PM",
-    "time_slots": ["9:00 AM - 1:00 PM", "1:00 PM - 5:00 PM", "5:00 PM - 9:00 PM"],
+    "time_slots": [
+      { "label": "Morning", "start": "09:00", "end": "13:00" },
+      { "label": "Afternoon", "start": "13:00", "end": "17:00" },
+      { "label": "Evening", "start": "17:00", "end": "21:00" }
+    ],
     "rating": 4.2,
     "reviews": 66
   },
@@ -183,8 +221,8 @@
     "id": 11,
     "name": "ThinkHub",
     "location": "Iloilo City",
-    "price": 180,
-    "main_image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
+    "price": 230,
+    "main_image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgJh2MZZ_ylUCKazW3bmc4yN78NnWmSchFSxSQHC2ocv2psFtO387g5qeKckCakPoKTdRYhvbjtgCzSse6lu7rBV1bN4qsmKLdpnwzHE8nHFB1WtNhKsigHJXDM8JVU-NSHcfKJPZGa-jXKaN5Osyb0bq72puKjyjSTq0om1o3VpV2A66wugI6R4lGCZA/s1600/home-room.png",
     "images": [
       "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70",
       "https://images.unsplash.com/photo-1587613865763-4b8b6f3e9b07"
@@ -193,7 +231,11 @@
     "tag": { "type": "popular", "label": "Popular" },
     "amenities": ["wifi", "desks", "coffee", "meeting", "events", "ac"],
     "hours": "8:00 AM - 9:00 PM",
-    "time_slots": ["8:00 AM - 12:00 PM", "1:00 PM - 5:00 PM", "5:00 PM - 9:00 PM"],
+    "time_slots": [
+      { "label": "Morning", "start": "08:00", "end": "12:00" },
+      { "label": "Afternoon", "start": "13:00", "end": "17:00" },
+      { "label": "Evening", "start": "17:00", "end": "21:00" }
+    ],
     "rating": 4.4,
     "reviews": 89
   },
@@ -201,8 +243,8 @@
     "id": 12,
     "name": "HiveWork",
     "location": "Pasig City",
-    "price": 250,
-    "main_image": "https://images.unsplash.com/photo-1590608897129-79da98d159c7",
+    "price": 350,
+    "main_image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgEy5ISUDwmQK1Jx_PQHoTcgTUPE_iboo6FcV1xzhq5qyploC-bmvSZ8GTR-FWPf-bx6YWzdiQIYVIb1UGmiIMJfy-_zD_xEbRbfEaOFA2zsDTl6mhIMk7VTsEV_yncx-6i4EKTvLiDiQvXJ3xvvGCOzDMd3mdesQHpblxBpVy2efBr229wmjex-KGynQ/s1600/kingscity.png",
     "images": [
       "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
       "https://images.unsplash.com/photo-1551836022-4c4c79ecde51"
@@ -211,7 +253,10 @@
     "tag": { "type": "premium", "label": "Premium" },
     "amenities": ["wifi", "meeting", "events", "coffee", "lounge", "ac"],
     "hours": "Open 24/7",
-    "time_slots": ["Full Day Pass", "Evening Pass (6:00 PM - 12:00 MN)"],
+    "time_slots": [
+      { "label": "Full Day Pass", "start": "00:00", "end": "23:59" },
+      { "label": "Evening Pass", "start": "18:00", "end": "00:00" }
+    ],
     "rating": 4.8,
     "reviews": 192
   },
@@ -219,8 +264,8 @@
     "id": 13,
     "name": "FocusSpace",
     "location": "Baguio City",
-    "price": 100,
-    "main_image": "https://images.unsplash.com/photo-1522202176982-66273c2fd55e",
+    "price": 200,
+    "main_image": "https://images.summitmedia-digital.com/spotph/images/2019/02/27/uni-lounge-1551235120.jpg",
     "images": [
       "https://images.unsplash.com/photo-1497366811353-6870744d04b2",
       "https://images.unsplash.com/photo-1556740758-90de374c12ad"
@@ -229,7 +274,11 @@
     "tag": { "type": "budget", "label": "Budget" },
     "amenities": ["wifi", "coffee", "quiet", "snacks", "desks", "books"],
     "hours": "7:00 AM - 9:00 PM",
-    "time_slots": ["7:00 AM - 12:00 PM", "1:00 PM - 6:00 PM", "6:00 PM - 9:00 PM"],
+    "time_slots": [
+      { "label": "Morning", "start": "07:00", "end": "12:00" },
+      { "label": "Afternoon", "start": "13:00", "end": "18:00" },
+      { "label": "Evening", "start": "18:00", "end": "21:00" }
+    ],
     "rating": 4.1,
     "reviews": 73
   },
@@ -237,8 +286,8 @@
     "id": 14,
     "name": "MindWorks",
     "location": "Taguig City",
-    "price": 280,
-    "main_image": "https://images.unsplash.com/photo-1527689368864-3a821dbccc34",
+    "price": 550,
+    "main_image": "https://odfcdn.dormy.ph/external/img/to_webp/aHR0cHM6Ly9saDctcnQuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2RvY3N6L0FEXzRuWGU0NGtQVnJ6ZW1LRFRvbEhlRUtxZXRZSlh1amtycWp2MnFPbUtvczV0N1NyejFJZkRuVVhLalVVTmVlNzEyTTdNSDh5ZlJKeGJmVjRNOFdFZHFhbWV4ZmltaUlLNjBWTzdERUdEWVEzNmV4NGs5VEpyZktiU2x3LUxDeWxzOWM5SE02RVBlTUE/a2V5PVhRV2JqS2N3Ykg4Q0dtdWFjeEFUcXRpaQ==",
     "images": [
       "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
       "https://images.unsplash.com/photo-1485217988980-11786ced9454"
@@ -247,7 +296,10 @@
     "tag": { "type": "premium", "label": "Premium" },
     "amenities": ["wifi", "private", "lounge", "coffee", "printing", "ac"],
     "hours": "Open 24/7",
-    "time_slots": ["Full Day Pass", "Night Pass (8:00 PM - 6:00 AM)"],
+    "time_slots": [
+      { "label": "Full Day Pass", "start": "00:00", "end": "23:59" },
+      { "label": "Night Pass", "start": "20:00", "end": "06:00" }
+    ],
     "rating": 4.9,
     "reviews": 220
   },
@@ -255,17 +307,21 @@
     "id": 15,
     "name": "BrainStation",
     "location": "Cavite",
-    "price": 120,
-    "main_image": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1",
+    "price": 150,
+    "main_image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTxvAF105ekaWMAv6EOOkAOL34OYX3MPxLhkqG3qQczH7J7SAYaFiZg01J1on9yicK1xJxXdceRefN6W0v7OZljBHfLMur0foO5bgGoxMrAcInNK76LPLISdwvYfpbQKoTVpHy6K38l_ZLyz4BCQ5-JKRsSlhBmJBi2_D__BwoJwfK6JZxuR_63nQk7w/s1600/nerd%20house%20fairview.png",
     "images": [
       "https://images.unsplash.com/photo-1532614338840-ab30cf10ed36",
       "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70"
     ],
     "description": "A bright and inspiring study hub in Cavite for students and remote workers.",
-    "tag": { "type": "standard", "label": "Standard" },
+    "tag": { "type": "budget", "label": "Budget" },
     "amenities": ["wifi", "ac", "desks", "power", "printer", "refreshments"],
     "hours": "9:00 AM - 10:00 PM",
-    "time_slots": ["9:00 AM - 1:00 PM", "1:00 PM - 5:00 PM", "5:00 PM - 10:00 PM"],
+    "time_slots": [
+      { "label": "Morning", "start": "09:00", "end": "13:00" },
+      { "label": "Afternoon", "start": "13:00", "end": "17:00" },
+      { "label": "Evening", "start": "17:00", "end": "22:00" }
+    ],
     "rating": 4.3,
     "reviews": 61
   },
@@ -273,8 +329,8 @@
     "id": 16,
     "name": "CollabCorner",
     "location": "Laguna",
-    "price": 150,
-    "main_image": "https://images.unsplash.com/photo-1556740749-887f6717d7e4",
+    "price": 250,
+    "main_image": "https://cdn.agentimagehosting.com/loftph/2024/08/Loft-BGC-OPD-Coworking-Latest-Photo-2-3.png",
     "images": [
       "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5",
       "https://images.unsplash.com/photo-1522202176982-66273c2fd55e"
@@ -283,7 +339,11 @@
     "tag": { "type": "new", "label": "New" },
     "amenities": ["wifi", "meeting", "coffee", "events", "desks", "snacks"],
     "hours": "8:00 AM - 8:00 PM",
-    "time_slots": ["8:00 AM - 12:00 PM", "12:00 PM - 4:00 PM", "4:00 PM - 8:00 PM"],
+    "time_slots": [
+      { "label": "Morning", "start": "08:00", "end": "12:00" },
+      { "label": "Afternoon", "start": "12:00", "end": "16:00" },
+      { "label": "Evening", "start": "16:00", "end": "20:00" }
+    ],
     "rating": 4.2,
     "reviews": 44
   },
@@ -291,8 +351,8 @@
     "id": 17,
     "name": "WorkNest",
     "location": "General Santos City",
-    "price": 200,
-    "main_image": "https://images.unsplash.com/photo-1557804506-669a67965ba0",
+    "price": 280,
+    "main_image": "https://cdn.phonebooky.com/blog/wp-content/uploads/2023/08/09163407/qcup_11zon.jpg",
     "images": [
       "https://images.unsplash.com/photo-1551836022-4c4c79ecde51",
       "https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
@@ -301,7 +361,11 @@
     "tag": { "type": "standard", "label": "Standard" },
     "amenities": ["wifi", "ac", "ergonomic", "coffee", "printing", "support"],
     "hours": "8:00 AM - 10:00 PM",
-    "time_slots": ["8:00 AM - 1:00 PM", "1:00 PM - 5:00 PM", "5:00 PM - 10:00 PM"],
+    "time_slots": [
+      { "label": "Morning", "start": "08:00", "end": "13:00" },
+      { "label": "Afternoon", "start": "13:00", "end": "17:00" },
+      { "label": "Evening", "start": "17:00", "end": "22:00" }
+    ],
     "rating": 4.5,
     "reviews": 97
   },
@@ -309,8 +373,8 @@
     "id": 18,
     "name": "The Study Loft",
     "location": "Quezon City",
-    "price": 160,
-    "main_image": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61",
+    "price": 250,
+    "main_image": "https://sudostaffing.ph/wp-content/uploads/2023/03/933.jpg",
     "images": [
       "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1"
@@ -319,7 +383,11 @@
     "tag": { "type": "popular", "label": "Popular" },
     "amenities": ["wifi", "coffee", "ergonomic", "snacks", "ac", "lounge"],
     "hours": "9:00 AM - 11:00 PM",
-    "time_slots": ["9:00 AM - 1:00 PM", "1:00 PM - 6:00 PM", "6:00 PM - 11:00 PM"],
+    "time_slots": [
+      { "label": "Morning", "start": "09:00", "end": "13:00" },
+      { "label": "Afternoon", "start": "13:00", "end": "18:00" },
+      { "label": "Evening", "start": "18:00", "end": "23:00" }
+    ],
     "rating": 4.6,
     "reviews": 155
   },
@@ -327,8 +395,8 @@
     "id": 19,
     "name": "BrightDesk",
     "location": "Roxas City",
-    "price": 110,
-    "main_image": "https://images.unsplash.com/photo-1497366811353-6870744d04b2",
+    "price": 250,
+    "main_image": "https://gostaytion.com/_next/image?url=https%3A%2F%2Fcdn.gostaytion.com%2Ff5ea09bd-28de-4bf5-8bc3-32732036c347.webp&w=3840&q=75",
     "images": [
       "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70",
       "https://images.unsplash.com/photo-1556740758-90de374c12ad"
@@ -337,7 +405,11 @@
     "tag": { "type": "budget", "label": "Budget" },
     "amenities": ["wifi", "quiet", "ac", "power", "seating"],
     "hours": "8:00 AM - 8:00 PM",
-    "time_slots": ["8:00 AM - 12:00 PM", "12:00 PM - 4:00 PM", "4:00 PM - 8:00 PM"],
+    "time_slots": [
+      { "label": "Morning", "start": "08:00", "end": "12:00" },
+      { "label": "Afternoon", "start": "12:00", "end": "16:00" },
+      { "label": "Evening", "start": "16:00", "end": "20:00" }
+    ],
     "rating": 4.0,
     "reviews": 40
   },
@@ -345,8 +417,8 @@
     "id": 20,
     "name": "UrbanHive",
     "location": "Manila",
-    "price": 300,
-    "main_image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
+    "price": 400,
+    "main_image": "https://workable.ph/sites/default/files/slideshow/homebanner-tommorowspace_0.jpg",
     "images": [
       "https://images.unsplash.com/photo-1551836022-4c4c79ecde51",
       "https://images.unsplash.com/photo-1527689368864-3a821dbccc34"
@@ -355,7 +427,10 @@
     "tag": { "type": "premium", "label": "Premium" },
     "amenities": ["wifi", "events", "lounge", "networking", "coffee", "ac"],
     "hours": "Open 24/7",
-    "time_slots": ["Full Day Pass", "Night Owl Pass (9:00 PM - 6:00 AM)"],
+    "time_slots": [
+      { "label": "Full Day Pass", "start": "00:00", "end": "23:59" },
+      { "label": "Night Owl Pass", "start": "21:00", "end": "06:00" }
+    ],
     "rating": 4.7,
     "reviews": 185
   }

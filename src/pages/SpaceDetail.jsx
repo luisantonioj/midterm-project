@@ -92,6 +92,13 @@ export default function SpaceDetail() {
     }
   };
 
+  const formatTime = (time) => {
+    const [hour, minute] = time.split(":").map(Number);
+    const date = new Date();
+    date.setHours(hour, minute);
+    return date.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+  };
+
   return (
     <div className="max-w-7xl mx-auto pt-26 px-4 pb-10">
       <button 
@@ -168,14 +175,16 @@ export default function SpaceDetail() {
 
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-2">Time slot</label>
-                <select 
-                  value={selectedSlot} 
-                  onChange={e => setSelectedSlot(e.target.value)}
+                <select
+                  value={selectedSlot ? JSON.stringify(selectedSlot) : ""}
+                  onChange={(e) => setSelectedSlot(JSON.parse(e.target.value))}
                   className="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
                   required
                 >
-                  {space.time_slots.map((time, i) => (
-                    <option key={i} value={time}>{time}</option>
+                  {space.time_slots.map((slot, i) => (
+                    <option key={i} value={JSON.stringify(slot)}>
+                      {slot.label} ({formatTime(slot.start)} - {formatTime(slot.end)})
+                    </option>
                   ))}
                 </select>
               </div>
