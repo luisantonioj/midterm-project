@@ -44,7 +44,7 @@ export default function SpaceCard({ space }) {
             <h3 className="font-semibold text-slate-900 text-lg pr-2 leading-tight">{space.name}</h3>
             <div className="text-right whitespace-nowrap">
               <span className="text-lg font-bold text-indigo-600">₱{space.price}</span>
-              <span className="text-slate-500 text-sm ml-0.5">/hr</span>
+              <span className="text-slate-500 text-sm ml-0.5">/slot</span>
             </div>
           </div>
           
