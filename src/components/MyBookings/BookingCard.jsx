@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ConfirmationModal from './ConfirmationModal';
 
 export default function BookingCard({ booking, onCancel }) {
@@ -25,7 +25,11 @@ export default function BookingCard({ booking, onCancel }) {
           <div className="ml-4 flex-grow">
             <h3 className="text-lg font-semibold">{booking.spaceName}</h3>
             <p className="text-gray-600">Date: {booking.date}</p>
-            <p className="text-gray-600">Time: {booking.timeSlot}</p>
+            {booking.timeSlot && (
+              <p className="text-gray-600">
+                Time: {booking.timeSlot.label} ({booking.timeSlot.start} - {booking.timeSlot.end})
+              </p>
+            )}
             <p className="text-blue-600 font-bold">₱{booking.price}</p>
             {booking.notes && (
               <p className="text-gray-600 mt-2">Notes: {booking.notes}</p>
