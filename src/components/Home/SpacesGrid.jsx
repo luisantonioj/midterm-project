@@ -2,15 +2,21 @@ import React, { useState, useEffect } from "react";
 import SpaceCard from "../../components/Home/SpaceCard";
 
 export default function SpacesGrid({ spaces }) {
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6; // Number of items per page
+  const [currentPage, setCurrentPage] = useState(
+    () => Number(localStorage.getItem("currentPage")) || 1
+  );
+  const itemsPerPage = 6; 
 
   useEffect(() => {
-    setCurrentPage(1); // Reset to first page when spaces change
-  }, [spaces]);
+    if (spaces.length === 0) {
+      setCurrentPage(1);
+      localStorage.setItem("currentPage", 1);
+    }
+  }, [spaces.length]);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
+    localStorage.setItem("currentPage", page);
 
     setTimeout(() => {
       const element = document.getElementById("spaces-grid-section");
