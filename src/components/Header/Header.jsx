@@ -9,12 +9,13 @@ import MobileMenuButton from "./MobileMenuButton";
 export default function Header() {
   const { user, login, logout } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(() => window.scrollY > 50);
   const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
+    handleScroll(); 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
