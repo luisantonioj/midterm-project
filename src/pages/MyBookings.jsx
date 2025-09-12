@@ -67,9 +67,9 @@ export default function MyBookings() {
                   <div className="flex-1">
                     <div className="flex items-start justify-between mb-3">
                       <h3 className="font-bold text-xl text-gray-900">{b.spaceName}</h3>
-                      <span className={`text-xs font-semibold px-3 py-1 rounded-full ${isCompleted ? "bg-gray-100 text-gray-700" : "bg-blue-100 text-blue-700"}`}>
+                      {/* <span className={`text-xs font-semibold px-3 py-1 rounded-full ${isCompleted ? "bg-gray-100 text-gray-700" : "bg-blue-100 text-blue-700"}`}>
                         {isCompleted ? "Completed" : "Upcoming"}
-                      </span>
+                      </span> */}
                     </div>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
@@ -93,6 +93,12 @@ export default function MyBookings() {
                         </svg>
                         <span>₱{b.price}</span>
                       </div>
+
+                      <div className="flex items-center text-gray-700">
+                        <span className={`text-xs font-semibold px-3 py-1 rounded-full ${isCompleted ? "bg-gray-100 text-gray-700" : "bg-blue-100 text-blue-700"}`}>
+                          {isCompleted ? "Completed" : "Upcoming"}
+                        </span>
+                      </div>
                     </div>
                     
                     {b.note && (
@@ -105,7 +111,7 @@ export default function MyBookings() {
                   </div>
                   
                   {isUpcoming && (
-                    <div className="md:pl-4 md:border-l md:border-gray-200 flex md:flex-col justify-end md:justify-center space-x-2 md:space-x-0 md:space-y-2">
+                    <div className=" flex md:flex-col justify-end md:justify-center space-x-2 md:space-x-0 md:space-y-2 ml-5">
                       <button 
                         onClick={() => setSelectedCancel(b.id)} 
                         className="px-4 py-2 bg-white border border-red-300 text-red-600 rounded-lg hover:bg-red-50 transition-colors focus:outline-none focus:ring-2 focus:ring-red-200 text-sm font-medium"
@@ -114,6 +120,8 @@ export default function MyBookings() {
                       </button>
                     </div>
                   )}
+
+                  {isCompleted && ( <div className="ml-5 mr-33"> </div>  )}
                 </div>
               </div>
             );
