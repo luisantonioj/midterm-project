@@ -78,13 +78,14 @@ export default function Home() {
         toggleAmenity={toggleAmenity}
       />
 
-      <div className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-auto whitespace-nowrap scrollbar-hide">
         <Filters
           amenityOptions={amenityOptions}
           selectedAmenities={selectedAmenities}
           toggleAmenity={toggleAmenity}
           query={query}
           resultCount={filtered.length}
+          spacesData={spacesData}
         />
         <SpacesGrid spaces={filtered} />
       </div>
