@@ -57,7 +57,7 @@ export default function DesktopNav({ user, login, logout, isScrolled, isSolidPag
         <button
           onClick={() => {
             login();
-            navigate("/my-bookings");
+            navigate("/");
           }}
           className={`px-4 py-2 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg ${
             activeLight
