@@ -167,7 +167,7 @@ export default function SpaceDetail() {
                   type="date" 
                   value={date} 
                   onChange={e => setDate(e.target.value)}
-                  // min={new Date().toLocaleDateString('en-CA')} // Prevent past dates
+                  min={new Date().toLocaleDateString('en-CA')} // Prevent past dates
                   className="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-indigo-500 focus:border-transparent" 
                   required
                 />
