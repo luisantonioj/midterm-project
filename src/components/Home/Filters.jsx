@@ -87,7 +87,7 @@ export default function Filters({
                 onClick={() => toggleAmenity(amenity)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors flex-shrink-0 ${
                   selectedAmenities.includes(amenity)
-                    ? 'bg-blue-600 text-white'
+                    ? 'bg-indigo-600 text-white'
                     : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                 }`}
               >
