@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-// Helper function to get tag class based on type
 const getTagClass = (type) => {
   const classes = {
     premium: "bg-amber-100 text-amber-800",
@@ -14,6 +13,8 @@ const getTagClass = (type) => {
 
 export default function SpaceCard({ space }) {
   const [showAllAmenities, setShowAllAmenities] = useState(false);
+  const cardRef = useRef(null);
+  const [maxHeight, setMaxHeight] = useState('auto');
 
   const toggleAmenities = (e) => {
     e.preventDefault();
@@ -21,8 +22,30 @@ export default function SpaceCard({ space }) {
     setShowAllAmenities(!showAllAmenities);
   };
 
+  // Update card height when amenities are toggled
+  useEffect(() => {
+    if (cardRef.current) {
+      // Reset to auto to get the natural height
+      cardRef.current.style.height = 'auto';
+      
+      // Use requestAnimationFrame to ensure the DOM has updated
+      requestAnimationFrame(() => {
+        if (cardRef.current) {
+          const height = cardRef.current.scrollHeight;
+          cardRef.current.style.height = `${height}px`;
+        }
+      });
+    }
+  }, [showAllAmenities]);
+
+  // Ensure amenities is always an array
+  const amenities = Array.isArray(space.amenities) ? space.amenities : [];
+
   return (
-    <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-slate-100 hover:bg-indigo-50 transition-all duration-300">
+    <div 
+      ref={cardRef}
+      className="space-card bg-white rounded-xl shadow-sm overflow-hidden border border-slate-100 hover:bg-indigo-50 transition-all duration-300"
+    >
       <Link to={`/space/${space.id}`} className="block">
         <div className="relative">
           <img 
@@ -31,7 +54,6 @@ export default function SpaceCard({ space }) {
             className="h-80 w-full object-cover" 
           />
           
-          {/* Tag in upper left corner */}
           {space.tag && (
             <div className={`absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-medium ${getTagClass(space.tag.type)}`}>
               {space.tag.label}
@@ -48,7 +70,6 @@ export default function SpaceCard({ space }) {
             </div>
           </div>
           
-          {/* Location */}
           <div className="flex items-center text-slate-600 text-sm mt-0">
             <svg className="w-4 h-4 mr-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -59,8 +80,7 @@ export default function SpaceCard({ space }) {
         </div>
       </Link>
       
-      {/* Amenities - outside the link to prevent navigation when clicking */}
-      {space.amenities && space.amenities.length > 0 && (
+      {amenities.length > 0 && (
         <div className="px-4 pt-0">
           <div className="flex items-start text-slate-600 text-sm">
             <svg className="w-4 h-4 mr-1 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -68,15 +88,15 @@ export default function SpaceCard({ space }) {
             </svg>
             <span>
               {showAllAmenities 
-                ? space.amenities.join(", ")
-                : `${space.amenities.slice(0, 3).join(", ")}`
+                ? amenities.join(", ")
+                : `${amenities.slice(0, 3).join(", ")}`
               }
-              {space.amenities.length > 3 && (
+              {amenities.length > 3 && (
                 <button 
                   onClick={toggleAmenities}
                   className="text-indigo-600 hover:text-indigo-800 ml-1 font-medium text-xs"
                 >
-                  {showAllAmenities ? " Show less" : ` +${space.amenities.length - 3} more`}
+                  {showAllAmenities ? " Show less" : ` +${amenities.length - 3} more`}
                 </button>
               )}
             </span>
@@ -84,7 +104,6 @@ export default function SpaceCard({ space }) {
         </div>
       )}
       
-      {/* Rating and Reviews */}
       <div className="px-4 pb-3 pt-0 border-slate-100">
         <div className="flex items-center">
           <svg className="w-4 h-4 text-slate-600 fill-current mr-1" viewBox="0 0 20 20">
