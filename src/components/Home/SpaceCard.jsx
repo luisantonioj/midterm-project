@@ -24,7 +24,6 @@ export default function SpaceCard({ space }) {
   const amenities = Array.isArray(space.amenities) ? space.amenities : [];
 
   return (
-    //debug amenities toggle
     <div 
       className="space-card bg-white rounded-xl shadow-sm overflow-hidden border border-slate-100 hover:bg-indigo-50 transition-all duration-300"
     >
@@ -45,7 +44,7 @@ export default function SpaceCard({ space }) {
         
         <div className="p-4">
           <div className="flex justify-between items-start">
-            <h3 className="font-semibold text-slate-900 text-lg pr-2 leading-tight">
+            <h3 className="font-semibold text-slate-900 text-lg pr-2 leading-[1.1] whitespace-normal break-words">
               {space.name}
             </h3>
             <div className="text-right whitespace-nowrap">
@@ -59,7 +58,7 @@ export default function SpaceCard({ space }) {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
-            <span className="truncate">{space.location}</span>
+            <span className="whitespace-normal break-words">{space.location}</span>
           </div>
         </div>
       </Link>
@@ -70,7 +69,7 @@ export default function SpaceCard({ space }) {
             <svg className="w-4 h-4 mr-1 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
             </svg>
-            <span>
+            <span className="whitespace-normal break-words">
               {showAllAmenities 
                 ? amenities.join(", ")
                 : `${amenities.slice(0, 3).join(", ")}`
