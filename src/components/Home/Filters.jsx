@@ -60,7 +60,7 @@ export default function Filters({
         {showArrows.left && (
           <button
             onClick={() => scroll('left')}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-1 shadow-md hover:bg-gray-100"
+            className="absolute left-0 top-1/4 -translate-y-1/4 z-10 bg-white rounded-full p-1 shadow-md hover:bg-gray-100"
           >
             <ChevronLeftIcon className="h-5 w-5 text-gray-700" />
           </button>
@@ -69,7 +69,7 @@ export default function Filters({
         {showArrows.right && (
           <button
             onClick={() => scroll('right')}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-1 shadow-md hover:bg-gray-100"
+            className="absolute right-0 top-1/4 -translate-y-1/4 z-10 bg-white rounded-full p-1 shadow-md hover:bg-gray-100"
           >
             <ChevronRightIcon className="h-5 w-5 text-gray-700" />
           </button>
