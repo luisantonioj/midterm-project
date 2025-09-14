@@ -12,7 +12,7 @@ export default function SpacesGrid({ spaces }) {
       setCurrentPage(1);
       localStorage.setItem("currentPage", 1);
     }
-  }, [spaces.length]);
+  }, [spaces.length, setCurrentPage]);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);

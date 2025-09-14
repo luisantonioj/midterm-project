@@ -23,6 +23,10 @@ export default function Home() {
   const [selectedAmenities, setSelectedAmenities] = useState([]);
   const [activeCategory, setActiveCategory] = useState("all");
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentPage, setCurrentPage] = useState(
+    () => Number(localStorage.getItem("currentPage")) || 1
+  );
+  // debug
 
   const amenityOptions = ["wifi", "power", "coffee", "printer", "ac", "parking"];
 
@@ -63,6 +67,8 @@ export default function Home() {
         ? prev.filter((a) => a !== amenity)
         : [...prev, amenity]
     );
+    setCurrentPage(1);
+    localStorage.setItem("currentPage", 1);
   };
 
   return (
@@ -87,7 +93,11 @@ export default function Home() {
           resultCount={filtered.length}
           spacesData={spacesData}
         />
-        <SpacesGrid spaces={filtered} />
+        <SpacesGrid 
+          spaces={filtered}
+          currentPage={currentPage} 
+          setCurrentPage={setCurrentPage}
+        />
       </div>
     </div>
   );
