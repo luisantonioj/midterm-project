@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const getTagClass = (type) => {
@@ -13,8 +13,6 @@ const getTagClass = (type) => {
 
 export default function SpaceCard({ space }) {
   const [showAllAmenities, setShowAllAmenities] = useState(false);
-  const cardRef = useRef(null);
-  const [maxHeight, setMaxHeight] = useState('auto');
 
   const toggleAmenities = (e) => {
     e.preventDefault();
@@ -22,28 +20,12 @@ export default function SpaceCard({ space }) {
     setShowAllAmenities(!showAllAmenities);
   };
 
-  // Update card height when amenities are toggled
-  useEffect(() => {
-    if (cardRef.current) {
-      // Reset to auto to get the natural height
-      cardRef.current.style.height = 'auto';
-      
-      // Use requestAnimationFrame to ensure the DOM has updated
-      requestAnimationFrame(() => {
-        if (cardRef.current) {
-          const height = cardRef.current.scrollHeight;
-          cardRef.current.style.height = `${height}px`;
-        }
-      });
-    }
-  }, [showAllAmenities]);
-
   // Ensure amenities is always an array
   const amenities = Array.isArray(space.amenities) ? space.amenities : [];
 
   return (
+    //debug amenities toggle
     <div 
-      ref={cardRef}
       className="space-card bg-white rounded-xl shadow-sm overflow-hidden border border-slate-100 hover:bg-indigo-50 transition-all duration-300"
     >
       <Link to={`/space/${space.id}`} className="block">
@@ -63,7 +45,9 @@ export default function SpaceCard({ space }) {
         
         <div className="p-4">
           <div className="flex justify-between items-start">
-            <h3 className="font-semibold text-slate-900 text-lg pr-2 leading-tight">{space.name}</h3>
+            <h3 className="font-semibold text-slate-900 text-lg pr-2 leading-tight">
+              {space.name}
+            </h3>
             <div className="text-right whitespace-nowrap">
               <span className="text-lg font-bold text-indigo-600">₱{space.price}</span>
               <span className="text-slate-500 text-sm ml-0.5">/slot</span>
