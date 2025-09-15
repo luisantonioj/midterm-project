@@ -11,7 +11,7 @@
       "type": "premium",
       "label": "Premium"
     },
-    "amenities": ["wifi", "pods", "nap", "coffee", "pantry", "whiteboard", "lockers", "safety", "ac"],
+    "amenities": ["wifi", "coffee", "pantry", "whiteboard", "lockers", "desks", "ac"],
     "hours": "8:00 AM - 10:00 PM",
     "time_slots": [
       { "label": "Morning Slot", "start": "08:00", "end": "12:00" },
@@ -33,7 +33,7 @@
       "type": "standard",
       "label": "Standard"
     },
-    "amenities": ["wifi", "desks", "meeting", "virtual", "coffee", "printing", "support", "gym", "ac", "cleaning"],
+    "amenities": ["wifi", "desks", "meeting", "coffee", "printing", "ac","lounge"],
     "hours": "Open 24/7",
     "time_slots": [
       { "label": "Full Day Pass", "start": "00:00", "end": "23:59" },
@@ -54,7 +54,7 @@
       "type": "popular",
       "label": "Popular"
     },
-    "amenities": ["wifi", "coffee", "ac", "desks", "charging", "printer", "snacks", "books"],
+    "amenities": ["wifi", "coffee", "ac", "desks", "printing", "snacks", "books"],
     "hours": "9:00 AM - 9:00 PM",
     "time_slots": [
       { "label": "Morning Slot", "start": "09:00", "end": "13:00" },
@@ -76,7 +76,7 @@
       "type": "standard",
       "label": "Standard"
     },
-    "amenities": ["wifi", "meeting", "ac", "coffee", "printer", "events", "lockers", "seating"],
+    "amenities": ["wifi", "meeting", "ac", "coffee", "printing", "events", "lockers", "desks"],
     "hours": "8:00 AM - 8:00 PM",
     "time_slots": [
       { "label": "Morning Slot", "start": "08:00", "end": "12:00" },
@@ -98,7 +98,7 @@
       "type": "new",
       "label": "New"
     },
-    "amenities": ["wifi", "desks", "ac", "snacks", "power", "events", "whiteboard", "gaming"],
+    "amenities": ["wifi", "desks", "ac", "snacks", "events", "whiteboard", "gaming"],
     "hours": "9:00 AM - 10:00 PM",
     "time_slots": [
       { "label": "Morning Slot", "start": "09:00", "end": "13:00" },
@@ -120,7 +120,7 @@
       "type": "premium",
       "label": "Premium"
     },
-    "amenities": ["wifi", "events", "meeting", "ac", "pantry", "24/7", "networking", "ergonomic"],
+    "amenities": ["wifi", "events", "meeting", "ac", "pantry", "ergonomic", "lounge"],
     "hours": "Open 24/7",
     "time_slots": [
       { "label": "Full Day Pass", "start": "00:00", "end": "23:59" },
@@ -141,7 +141,7 @@
       "type": "budget",
       "label": "Budget"
     },
-    "amenities": ["wifi", "ac", "affordable", "snacks", "power", "quiet", "printer", "seating"],
+    "amenities": ["wifi", "ac", "snacks", "printing", "desks", "lounge"],
     "hours": "9:00 AM - 9:00 PM",
     "time_slots": [
       { "label": "Morning", "start": "09:00", "end": "13:00" },
@@ -163,7 +163,7 @@
       "type": "standard",
       "label": "Standard"
     },
-    "amenities": ["wifi", "ac", "printing", "desks", "refreshments", "events", "lockers", "study"],
+    "amenities": ["wifi", "ac", "printing", "desks", "events", "lockers", "lounge", "coffee"],
     "hours": "8:00 AM - 10:00 PM",
     "time_slots": [
       { "label": "Morning", "start": "08:00", "end": "12:00" },
@@ -185,7 +185,7 @@
       "type": "popular",
       "label": "Popular"
     },
-    "amenities": ["wifi", "events", "private", "ac", "coffee", "networking", "pantry", "seating"],
+    "amenities": ["wifi", "events", "private", "ac", "coffee", "pantry", "desks", "lounge"],
     "hours": "8:00 AM - 11:00 PM",
     "time_slots": [
       { "label": "Morning", "start": "08:00", "end": "12:00" },
@@ -272,7 +272,7 @@
     ],
     "description": "A cozy study cafe in Baguio City that combines the cool climate with a warm atmosphere.",
     "tag": { "type": "budget", "label": "Budget" },
-    "amenities": ["wifi", "coffee", "quiet", "snacks", "desks", "books"],
+    "amenities": ["wifi", "coffee", "snacks", "desks", "books", "ac"],
     "hours": "7:00 AM - 9:00 PM",
     "time_slots": [
       { "label": "Morning", "start": "07:00", "end": "12:00" },
@@ -315,7 +315,7 @@
     ],
     "description": "A bright and inspiring study hub in Cavite for students and remote workers.",
     "tag": { "type": "budget", "label": "Budget" },
-    "amenities": ["wifi", "ac", "desks", "power", "printer", "refreshments"],
+    "amenities": ["wifi", "ac", "desks", "printing", "coffee", "snacks"],
     "hours": "9:00 AM - 10:00 PM",
     "time_slots": [
       { "label": "Morning", "start": "09:00", "end": "13:00" },
@@ -359,7 +359,7 @@
     ],
     "description": "A productive space in General Santos with ergonomic seating and high-speed internet.",
     "tag": { "type": "standard", "label": "Standard" },
-    "amenities": ["wifi", "ac", "ergonomic", "coffee", "printing", "support"],
+    "amenities": ["wifi", "ac", "ergonomic", "coffee", "printing"],
     "hours": "8:00 AM - 10:00 PM",
     "time_slots": [
       { "label": "Morning", "start": "08:00", "end": "13:00" },
@@ -403,7 +403,7 @@
     ],
     "description": "An affordable, minimalist study hub in Roxas City with reliable Wi-Fi and power outlets.",
     "tag": { "type": "budget", "label": "Budget" },
-    "amenities": ["wifi", "quiet", "ac", "power", "seating"],
+    "amenities": ["wifi", "coffee", "ac", "lounge"],
     "hours": "8:00 AM - 8:00 PM",
     "time_slots": [
       { "label": "Morning", "start": "08:00", "end": "12:00" },
@@ -425,7 +425,7 @@
     ],
     "description": "An urban-inspired co-working hub in Manila designed for networking and productivity.",
     "tag": { "type": "premium", "label": "Premium" },
-    "amenities": ["wifi", "events", "lounge", "networking", "coffee", "ac"],
+    "amenities": ["wifi", "events", "lounge", "coffee", "ac", "meeting", "desks"],
     "hours": "Open 24/7",
     "time_slots": [
       { "label": "Full Day Pass", "start": "00:00", "end": "23:59" },
