@@ -8,11 +8,11 @@ export default function SpacesGrid({ spaces }) {
   const itemsPerPage = 6; 
 
   useEffect(() => {
-    if (spaces.length === 0) {
+    if (spaces.length <= itemsPerPage && currentPage !== 1) {
       setCurrentPage(1);
       localStorage.setItem("currentPage", 1);
     }
-  }, [spaces.length, setCurrentPage]);
+  }, [spaces.length, currentPage, setCurrentPage]);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);

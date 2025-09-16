@@ -26,7 +26,6 @@ export default function Home() {
   const [currentPage, setCurrentPage] = useState(
     () => Number(localStorage.getItem("currentPage")) || 1
   );
-  // debug
 
   const amenityOptions = ["wifi", "power", "coffee", "printer", "ac", "parking"];
 
