@@ -34,13 +34,31 @@ export function BookingProvider({ children }) {
     return arr.filter((b) => b.userId === userId);
   };
 
+  // get booking count by user
+  const getBookingCountByUser = (userId) => {
+    const arr = Array.isArray(bookings) ? bookings : [];
+    return arr.filter((b) => b.userId === userId).length;
+  };
+
+  const value = {
+    bookings,
+    addBooking,
+    cancelBooking,
+    getBookingsByUser,
+    getBookingCountByUser // Add the new function to the context value
+  };
+
   return (
-    <BookingContext.Provider value={{ bookings, addBooking, cancelBooking, getBookingsByUser }}>
+    <BookingContext.Provider value={value}>
       {children}
     </BookingContext.Provider>
   );
 }
 
 export function useBookings() {
-  return useContext(BookingContext);
+  const context = useContext(BookingContext);
+  if (context === undefined) {
+    throw new Error("useBookings must be used within a BookingProvider");
+  }
+  return context;
 }

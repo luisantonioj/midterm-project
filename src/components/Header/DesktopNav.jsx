@@ -1,11 +1,22 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useBookings } from "../../contexts/BookingContext";
 
 export default function DesktopNav({ user, login, logout, isScrolled, isSolidPage, location }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
   const activeLight = isScrolled || isSolidPage;
   const dropdownRef = useRef(null);
+
+  let bookingCount = 0;
+  try {
+    const { getBookingsByUser } = useBookings();
+    bookingCount = user ? getBookingsByUser(user.id).length : 0;
+  } catch (error) {
+    console.error("Error accessing bookings context:", error);
+    // Fallback to 0 if context is not available
+    bookingCount = 0;
+  }
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -40,7 +51,7 @@ export default function DesktopNav({ user, login, logout, isScrolled, isSolidPag
 
       <Link
         to="/my-bookings"
-        className={`px-4 py-2.5 rounded-lg transition-all duration-200 ${
+        className={`relative px-4 py-2.5 rounded-lg transition-all duration-200 ${
           location.pathname.startsWith("/my-bookings")
             ? activeLight
               ? "bg-indigo-50 text-indigo-700 font-medium shadow-sm"
@@ -51,6 +62,15 @@ export default function DesktopNav({ user, login, logout, isScrolled, isSolidPag
         }`}
       >
         My Bookings
+        {bookingCount > 0 && (
+          <span className={`absolute -top-1 -right-1 flex items-center justify-center min-w-[20px] h-5 px-1 text-xs rounded-full ${
+            activeLight 
+              ? "bg-indigo-600 text-white" 
+              : "bg-white text-indigo-600"
+          }`}>
+            {bookingCount}
+          </span>
+        )}
       </Link>
 
       {!user ? (

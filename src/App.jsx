@@ -6,27 +6,30 @@ import Bookings from "./pages/MyBookings";
 import Login from "./pages/Login";
 import Header from "./components/Header/Header";
 import ProtectedRoute from "./utils/protectedRoute";
+import { BookingProvider } from "./contexts/BookingContext";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-800">
-      <Header />
-      <main className="container mx-auto">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/space/:spaceId" element={<SpaceDetail />} />
-          <Route path="/login" element={<Login />} />
-          <Route
-            path="/my-bookings"
-            element={
-              <ProtectedRoute>
-                <Bookings />
-              </ProtectedRoute>
-            }
-          />
-        </Routes>
-      </main>
-    </div>
+    <BookingProvider>
+      <div className="min-h-screen bg-gray-50 text-gray-800">
+        <Header />
+        <main className="container mx-auto">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/space/:spaceId" element={<SpaceDetail />} />
+            <Route path="/login" element={<Login />} />
+            <Route
+              path="/my-bookings"
+              element={
+                <ProtectedRoute>
+                  <Bookings />
+                </ProtectedRoute>
+              }
+            />
+          </Routes>
+        </main>
+      </div>
+    </BookingProvider>
   );
 }
