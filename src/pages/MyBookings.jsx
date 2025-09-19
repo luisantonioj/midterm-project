@@ -79,8 +79,13 @@ export default function MyBookings() {
               <div key={b.id} className="group bg-white rounded-xl shadow-sm p-6 transition-all hover:shadow-md border border-gray-100 pb-2 relative">
                 <div className="flex flex-col md:flex-row justify-between">
                   <div className="flex-1">
-                    <div className="flex items-start justify-between mb-1">
-                      <h3 className="font-bold text-xl text-gray-900">{b.spaceName}</h3>
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 gap-2">
+                      <div className="flex items-center gap-3">
+                        <h3 className="font-bold text-xl text-gray-900">{b.spaceName}</h3>
+                        <span className={`text-xs font-semibold px-3 py-1 rounded-full ${isCompleted ? "bg-gray-100 text-gray-700" : "bg-blue-100 text-blue-700"}`}>
+                          {isCompleted ? "Completed" : "Upcoming"}
+                        </span>
+                      </div>
                     </div>
                     
                     <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr_1fr] gap-3 mb-4">

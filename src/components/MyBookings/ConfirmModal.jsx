@@ -1,11 +1,5 @@
 import React from "react";
 
-/**
- * Minimal modal
- * show: boolean
- * onConfirm, onCancel
- * message: string
- */
 export default function ConfirmModal({ show, onConfirm, onCancel, message = "Are you sure?" }) {
   if (!show) return null;
   return (

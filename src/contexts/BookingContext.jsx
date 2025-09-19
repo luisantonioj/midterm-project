@@ -6,9 +6,7 @@ const BookingContext = createContext();
 export function BookingProvider({ children }) {
   const [bookings, setBookings] = useLocalStorage("studyspot_bookings", []);
 
-  // add booking and return the created booking (useful for tests/navigation)
   const addBooking = (booking) => {
-    // defensive: ensure bookings is an array
     setBookings((prev) => {
       const arr = Array.isArray(prev) ? prev : [];
       const newBooking = { id: Date.now(), ...booking };
@@ -48,7 +46,7 @@ export function BookingProvider({ children }) {
     cancelBooking,
     deleteBooking,
     getBookingsByUser,
-    getBookingCountByUser // Add the new function to the context value
+    getBookingCountByUser
   };
 
   return (
