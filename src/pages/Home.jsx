@@ -23,6 +23,9 @@ export default function Home() {
   const [selectedAmenities, setSelectedAmenities] = useState([]);
   const [activeCategory, setActiveCategory] = useState("all");
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentPage, setCurrentPage] = useState(
+    () => Number(localStorage.getItem("currentPage")) || 1
+  );
 
   const amenityOptions = ["wifi", "power", "coffee", "printer", "ac", "parking"];
 
@@ -63,6 +66,8 @@ export default function Home() {
         ? prev.filter((a) => a !== amenity)
         : [...prev, amenity]
     );
+    setCurrentPage(1);
+    localStorage.setItem("currentPage", 1);
   };
 
   return (
@@ -78,15 +83,20 @@ export default function Home() {
         toggleAmenity={toggleAmenity}
       />
 
-      <div className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-auto whitespace-nowrap scrollbar-hide">
         <Filters
           amenityOptions={amenityOptions}
           selectedAmenities={selectedAmenities}
           toggleAmenity={toggleAmenity}
           query={query}
           resultCount={filtered.length}
+          spacesData={spacesData}
         />
-        <SpacesGrid spaces={filtered} />
+        <SpacesGrid 
+          spaces={filtered}
+          currentPage={currentPage} 
+          setCurrentPage={setCurrentPage}
+        />
       </div>
     </div>
   );

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-// Helper function to get tag class based on type
 const getTagClass = (type) => {
   const classes = {
     premium: "bg-amber-100 text-amber-800",
@@ -21,8 +20,13 @@ export default function SpaceCard({ space }) {
     setShowAllAmenities(!showAllAmenities);
   };
 
+  // Ensure amenities is always an array
+  const amenities = Array.isArray(space.amenities) ? space.amenities : [];
+
   return (
-    <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-slate-100 hover:bg-indigo-50 transition-all duration-300">
+    <div 
+      className="space-card bg-white rounded-xl shadow-sm overflow-hidden border border-slate-100 hover:bg-indigo-50 transition-all duration-300"
+    >
       <Link to={`/space/${space.id}`} className="block">
         <div className="relative">
           <img 
@@ -31,7 +35,6 @@ export default function SpaceCard({ space }) {
             className="h-80 w-full object-cover" 
           />
           
-          {/* Tag in upper left corner */}
           {space.tag && (
             <div className={`absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-medium ${getTagClass(space.tag.type)}`}>
               {space.tag.label}
@@ -41,42 +44,42 @@ export default function SpaceCard({ space }) {
         
         <div className="p-4">
           <div className="flex justify-between items-start">
-            <h3 className="font-semibold text-slate-900 text-lg pr-2 leading-tight">{space.name}</h3>
+            <h3 className="font-semibold text-slate-900 text-lg pr-2 leading-[1.1] whitespace-normal break-words">
+              {space.name}
+            </h3>
             <div className="text-right whitespace-nowrap">
               <span className="text-lg font-bold text-indigo-600">₱{space.price}</span>
               <span className="text-slate-500 text-sm ml-0.5">/slot</span>
             </div>
           </div>
           
-          {/* Location */}
           <div className="flex items-center text-slate-600 text-sm mt-0">
             <svg className="w-4 h-4 mr-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
-            <span className="truncate">{space.location}</span>
+            <span className="whitespace-normal break-words">{space.location}</span>
           </div>
         </div>
       </Link>
       
-      {/* Amenities - outside the link to prevent navigation when clicking */}
-      {space.amenities && space.amenities.length > 0 && (
+      {amenities.length > 0 && (
         <div className="px-4 pt-0">
           <div className="flex items-start text-slate-600 text-sm">
             <svg className="w-4 h-4 mr-1 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
             </svg>
-            <span>
+            <span className="whitespace-normal break-words">
               {showAllAmenities 
-                ? space.amenities.join(", ")
-                : `${space.amenities.slice(0, 3).join(", ")}`
+                ? amenities.join(", ")
+                : `${amenities.slice(0, 3).join(", ")}`
               }
-              {space.amenities.length > 3 && (
+              {amenities.length > 3 && (
                 <button 
                   onClick={toggleAmenities}
                   className="text-indigo-600 hover:text-indigo-800 ml-1 font-medium text-xs"
                 >
-                  {showAllAmenities ? " Show less" : ` +${space.amenities.length - 3} more`}
+                  {showAllAmenities ? " Show less" : ` +${amenities.length - 3} more`}
                 </button>
               )}
             </span>
@@ -84,7 +87,6 @@ export default function SpaceCard({ space }) {
         </div>
       )}
       
-      {/* Rating and Reviews */}
       <div className="px-4 pb-3 pt-0 border-slate-100">
         <div className="flex items-center">
           <svg className="w-4 h-4 text-slate-600 fill-current mr-1" viewBox="0 0 20 20">

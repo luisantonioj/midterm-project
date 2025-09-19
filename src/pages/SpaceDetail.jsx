@@ -156,8 +156,8 @@ export default function SpaceDetail() {
         <div className="lg:w-1/3">
           <div className="sticky top-28 bg-white rounded-xl shadow-lg p-6">
             <div className="text-center mb-6">
-              <div className="text-4xl font-bold text-indigo-700 mb-2">₱{space.price}</div>
-              <div className="text-slate-600">per hour</div>
+              <div className="text-4xl font-bold text-indigo-700">₱{space.price}</div>
+              <div className="text-slate-600">per slot</div>
             </div>
 
             <form onSubmit={handleBook} className="space-y-5">
@@ -167,7 +167,7 @@ export default function SpaceDetail() {
                   type="date" 
                   value={date} 
                   onChange={e => setDate(e.target.value)}
-                  // min={new Date().toLocaleDateString('en-CA')} // Prevent past dates
+                  min={new Date().toLocaleDateString('en-CA')} // Prevent past dates
                   className="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-indigo-500 focus:border-transparent" 
                   required
                 />

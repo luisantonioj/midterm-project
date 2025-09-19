@@ -41,13 +41,10 @@ export default function Hero({
       {/* Hero Content */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="text-center px-4 max-w-4xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            Find Your Perfect
-            <span className="block text-indigo-400" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'}}>Study Space</span>
-          </h1>
+          <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold mb-1">Study Smarter,</h1>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 block text-indigo-400" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'}}>Anywhere</h1>
           <p className="text-xl text-slate-200 max-w-3xl mx-auto mb-10">
-            Discover and book the best co-working spaces and study hubs across
-            the Philippines
+            Easily discover and reserve the perfect study and co-working spaces nationwide
           </p>
 
           <SearchBar query={query} setQuery={setQuery} />
