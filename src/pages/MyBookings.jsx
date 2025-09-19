@@ -6,7 +6,8 @@ import Login from "./Login";
 
 export default function MyBookings() {
   const { user } = useAuth();
-  const { bookings, cancelBooking, isLoading } = useBookings();
+  const { bookings, cancelBooking, deleteBooking, isLoading } = useBookings();
+  const [deletingId, setDeletingId] = useState(null);
 
   if (!user) {
     return <Login />;
@@ -15,11 +16,24 @@ export default function MyBookings() {
   const myBookings = (Array.isArray(bookings) ? bookings : []).filter((b) => b.userId === user.id);
 
   const [selectedCancel, setSelectedCancel] = useState(null);
+  const [selectedDelete, setSelectedDelete] = useState(null);
 
   const handleCancelConfirm = () => {
     cancelBooking(selectedCancel);
     setSelectedCancel(null);
   };
+
+  const handleDeleteConfirm = async () => {
+  setDeletingId(selectedDelete);
+  try {
+    await deleteBooking(selectedDelete);
+  } catch (error) {
+    console.error("Failed to delete booking:", error);
+  } finally {
+    setSelectedDelete(null);
+    setDeletingId(null);
+  }
+};
 
   const formatTimeSlot = (slot) => {
     if (!slot) return "";
@@ -62,7 +76,7 @@ export default function MyBookings() {
             const isUpcoming = !isCompleted;
             
             return (
-              <div key={b.id} className="bg-white rounded-xl shadow-sm p-6 transition-all hover:shadow-md border border-gray-100 pb-2">
+              <div key={b.id} className="group bg-white rounded-xl shadow-sm p-6 transition-all hover:shadow-md border border-gray-100 pb-2 relative">
                 <div className="flex flex-col md:flex-row justify-between">
                   <div className="flex-1">
                     <div className="flex items-start justify-between mb-1">
@@ -108,7 +122,7 @@ export default function MyBookings() {
                   </div>
                   
                   {isUpcoming && (
-                    <div className=" flex md:flex-col justify-end md:justify-center space-x-2 md:space-x-0 md:space-y-2 ml-5">
+                    <div className="flex md:flex-col justify-end md:justify-center space-x-2 md:space-x-0 md:space-y-2 ml-5">
                       <button 
                         onClick={() => setSelectedCancel(b.id)} 
                         className="px-4 py-2 bg-white border border-red-300 text-red-600 rounded-lg hover:bg-red-50 transition-colors focus:outline-none focus:ring-2 focus:ring-red-200 text-sm font-medium"
@@ -118,7 +132,17 @@ export default function MyBookings() {
                     </div>
                   )}
 
-                  {isCompleted && ( <div className="ml-5 mr-33"> </div>  )}
+                  {isCompleted && (
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex md:flex-col justify-end md:justify-center space-x-2 md:space-x-0 md:space-y-2 ml-5">
+                      <button 
+                        onClick={() => setSelectedDelete(b.id)} 
+                        disabled={deletingId === b.id}
+                        className="px-4 py-2 bg-white border border-gray-300 text-gray-600 rounded-lg hover:bg-gray-50 hover:text-red-600 hover:border-red-300 transition-all focus:outline-none focus:ring-2 focus:ring-red-200 text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        {deletingId === b.id ? "Deleting..." : "Delete Booking"}
+                      </button>
+                    </div>
+                  )}
                 </div>
               </div>
             );
@@ -132,6 +156,14 @@ export default function MyBookings() {
         onCancel={() => setSelectedCancel(null)}
         message="Are you sure you want to cancel this booking?"
         title="Cancel Booking"
+      />
+
+      <ConfirmModal
+        show={!!selectedDelete}
+        onConfirm={handleDeleteConfirm}
+        onCancel={() => setSelectedDelete(null)}
+        message="Are you sure you want to delete this completed booking? This action cannot be undone."
+        title="Delete Booking"
       />
     </div>
   );

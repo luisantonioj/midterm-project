@@ -23,6 +23,13 @@ export function BookingProvider({ children }) {
     });
   };
 
+  const deleteBooking = (id) => {
+    setBookings((prev) => {
+      const arr = Array.isArray(prev) ? prev : [];
+      return arr.filter((b) => b.id !== id);
+    });
+  };
+
   // helper: get bookings by user
   const getBookingsByUser = (userId) => {
     const arr = Array.isArray(bookings) ? bookings : [];
@@ -39,6 +46,7 @@ export function BookingProvider({ children }) {
     bookings,
     addBooking,
     cancelBooking,
+    deleteBooking,
     getBookingsByUser,
     getBookingCountByUser // Add the new function to the context value
   };
