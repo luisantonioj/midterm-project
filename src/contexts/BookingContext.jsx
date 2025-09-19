@@ -3,11 +3,6 @@ import useLocalStorage from "../hooks/useLocalStorage";
 
 const BookingContext = createContext();
 
-/**
- * bookings stored under "studyspot_bookings".
- * Booking object shape (recommended):
- * { id, userId, spaceId, spaceName, date, timeSlot, price, note }
- */
 export function BookingProvider({ children }) {
   const [bookings, setBookings] = useLocalStorage("studyspot_bookings", []);
 
