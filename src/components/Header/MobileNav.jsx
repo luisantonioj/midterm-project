@@ -55,7 +55,7 @@ export default function MobileNav({
           }`}
           onClick={() => setIsMenuOpen(false)}
         >
-          My Bookings
+          Bookings
         </Link>
 
         {!user ? (
