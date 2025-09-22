@@ -75,13 +75,15 @@ export default function BookingCard({ booking, onCancel, onDelete, deletingId })
               )}
 
               {isCompleted && (
-                <button
-                  onClick={handleDelete}
-                  disabled={deletingId === booking.id}
-                  className="px-4 py-2 bg-white border border-gray-300 text-gray-600 rounded-lg hover:bg-gray-50 hover:text-red-600 hover:border-red-300 transition-all focus:outline-none focus:ring-2 focus:ring-red-200 text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {deletingId === booking.id ? "Deleting..." : "Delete Booking"}
-                </button>
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex md:flex-col justify-end md:justify-center space-x-2 md:space-x-0 md:space-y-2 ml-5">
+                  <button
+                    onClick={handleDelete}
+                    disabled={deletingId === booking.id}
+                    className="px-4 py-2 bg-white border border-gray-300 text-gray-600 rounded-lg hover:bg-gray-50 hover:text-red-600 hover:border-red-300 transition-all focus:outline-none focus:ring-2 focus:ring-red-200 text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {deletingId === booking.id ? "Deleting..." : "Delete Booking"}
+                  </button>
+                </div>
               )}
             </div>
           )}
