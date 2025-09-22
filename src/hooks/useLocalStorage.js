@@ -1,14 +1,5 @@
 import { useState, useEffect } from "react";
 
-/**
- * useLocalStorage hook - robust version
- * key: localStorage key
- * initialValue: default value (can be primitive, object, or a function returning the default)
- *
- * Notes:
- * - Checks for window/localStorage availability (safe for SSR-like environments)
- * - If initialValue is a function, it will be evaluated lazily (like useState)
- */
 export default function useLocalStorage(key, initialValue) {
   const isBrowser = typeof window !== "undefined" && typeof window.localStorage !== "undefined";
 

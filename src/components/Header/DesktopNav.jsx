@@ -61,7 +61,7 @@ export default function DesktopNav({ user, login, logout, isScrolled, isSolidPag
             : "text-white/90 hover:text-white hover:bg-white/10"
         }`}
       >
-        My Bookings
+        Bookings
         {bookingCount > 0 && (
           <span className={`absolute -top-1 -right-1 flex items-center justify-center min-w-[20px] h-5 px-1 text-xs rounded-full ${
             activeLight 
