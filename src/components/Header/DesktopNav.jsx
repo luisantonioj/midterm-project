@@ -6,6 +6,7 @@ import ConfirmModal from "../MyBookings/ConfirmModal";
 export default function DesktopNav({ user, login, logout, isScrolled, isSolidPage, location }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showSignInModal, setShowSignInModal] = useState(false);
+  const [showLogoutModal, setShowLogoutModal] = useState(false);
   const navigate = useNavigate();
   const activeLight = isScrolled || isSolidPage;
   const dropdownRef = useRef(null);
@@ -44,6 +45,21 @@ export default function DesktopNav({ user, login, logout, isScrolled, isSolidPag
 
   const handleCancelSignIn = () => {
     setShowSignInModal(false);
+  };
+
+  const handleLogout = () => {
+    setMenuOpen(false);
+    setShowLogoutModal(true);
+  };
+
+  const handleConfirmLogout = () => {
+    setShowLogoutModal(false);
+    logout();
+    navigate("/");
+  };
+
+  const handleCancelLogout = () => {
+    setShowLogoutModal(false);
   };
 
   return (
@@ -132,11 +148,7 @@ export default function DesktopNav({ user, login, logout, isScrolled, isSolidPag
                 }`}
               >
                 <button
-                  onClick={() => {
-                    logout();
-                    setMenuOpen(false);
-                    navigate("/");
-                  }}
+                  onClick={handleLogout}
                   className={`block w-full text-left px-4 py-3 text-sm transition-colors ${
                     activeLight
                       ? "text-slate-700 hover:bg-slate-50"
@@ -151,6 +163,7 @@ export default function DesktopNav({ user, login, logout, isScrolled, isSolidPag
           </div>
         )}
       </nav>
+
       <ConfirmModal
         show={showSignInModal}
         onConfirm={handleConfirmSignIn}
@@ -158,6 +171,14 @@ export default function DesktopNav({ user, login, logout, isScrolled, isSolidPag
         title="Welcome to StudySpot PH!"
         message="Sign in to book study spaces and co-working spots. Your next productive session starts here."
       /> 
+
+      <ConfirmModal
+        show={showLogoutModal}
+        onConfirm={handleConfirmLogout}
+        onCancel={handleCancelLogout}
+        title="Log Out"
+        message="Are you sure you want to log out?"
+      />
     </>
   );
 }
