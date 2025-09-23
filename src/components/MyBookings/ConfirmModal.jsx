@@ -4,8 +4,8 @@ export default function ConfirmModal({ show, onConfirm, onCancel, message = "Are
   if (!show) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 backdrop-blur-sm">
-      <div className="bg-white rounded-xl shadow-lg p-6 w-11/12 max-w-md border border-slate-200">
+    <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 backdrop-blur-sm" onClick={(e) => e.stopPropagation()}>
+      <div className="bg-white rounded-xl shadow-lg p-6 w-11/12 max-w-md border border-slate-200" onClick={(e) => e.stopPropagation()} >
         {title && (
           <h3 className="text-xl font-bold text-slate-800 mb-3 flex items-center gap-2">
             <i className="fas fa-exclamation-circle text-indigo-600"></i>
@@ -22,7 +22,10 @@ export default function ConfirmModal({ show, onConfirm, onCancel, message = "Are
           </button>
           <button
             className="px-5 py-2.5 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors duration-200 font-medium"
-            onClick={onConfirm}
+            onClick={(e) => {
+              e.stopPropagation();
+              onConfirm();
+            }}
           >
             Confirm
           </button>

@@ -8,17 +8,24 @@ export default function BookingCard({ booking, onCancel, onDelete, deletingId })
   const isCompleted = new Date(booking.date) < new Date();
   const isUpcoming = !isCompleted;
 
-  const handleCancel = () => setShowCancelModal(true);
-  const handleDelete = () => setShowDeleteModal(true);
+  const handleCancel = (e) => {
+    e.stopPropagation();
+    setShowCancelModal(true);
+  };
+
+  const handleDelete = (e) => {
+    e.stopPropagation();
+    setShowDeleteModal(true);
+  };
 
   const confirmCancel = () => {
-    onCancel(booking.id);
     setShowCancelModal(false);
+    onCancel(booking.id);
   };
 
   const confirmDelete = () => {
-    onDelete(booking.id);
     setShowDeleteModal(false);
+    onDelete(booking.id);
   };
 
   const formatTimeSlot = (slot) => {
