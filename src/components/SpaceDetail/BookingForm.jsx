@@ -77,7 +77,7 @@ export default function BookingForm({ space, user, date, setDate, selectedSlot, 
             {!user && (
               <p className="text-sm text-amber-600 mb-4 text-center">
                 <i className="fas fa-info-circle mr-1"></i>
-                Please log in to book
+                Please sign in to book your slot.
               </p>
             )}
             <button 
