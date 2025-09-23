@@ -6,6 +6,10 @@ export default function BookingForm({ space, user, date, setDate, selectedSlot, 
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!user) {
+      navigate("/login");
+      return;
+    }
     setShowModal(true);
   };
 
@@ -84,18 +88,20 @@ export default function BookingForm({ space, user, date, setDate, selectedSlot, 
               type="submit" 
               className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-6 rounded-lg transition-colors duration-200 text-lg"
             >
-              {user ? "Book Now" : "Login to Book"}
+              {user ? "Book Now" : "Sign In to Book"}
             </button>
           </div>
         </form>
       </div>
-      <ConfirmModal
-        show={showModal}
-        onConfirm={handleConfirm}
-        onCancel={handleCancel}
-        title="Confirm Booking"
-        message={modalMessage}
-      />
+      {user && (
+        <ConfirmModal
+          show={showModal}
+          onConfirm={handleConfirm}
+          onCancel={handleCancel}
+          title="Confirm Booking"
+          message={modalMessage}
+        />
+      )}
     </>
   );
 }
