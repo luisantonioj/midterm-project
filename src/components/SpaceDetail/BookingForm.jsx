@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import ConfirmModal from "../MyBookings/ConfirmModal";
 
@@ -6,6 +6,10 @@ export default function BookingForm({ space, user, date, setDate, selectedSlot, 
   const [showModal, setShowModal] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setSelectedSlot(null);
+  }, [date, setSelectedSlot]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -34,10 +38,17 @@ export default function BookingForm({ space, user, date, setDate, selectedSlot, 
     navigate("/my-bookings");
   };
 
-  const modalMessage = `
+  const modalMessage = selectedSlot
+  ? `
     Space: ${space.name}
     Date: ${date}
     Time: ${formatTime(selectedSlot.start)} - ${formatTime(selectedSlot.end)}
+    ${message ? `Special Requests: ${message}` : "No special requests"}
+  `
+  : `
+    Space: ${space.name}
+    Date: ${date}
+    Time: Not selected
     ${message ? `Special Requests: ${message}` : "No special requests"}
   `;
 
@@ -68,13 +79,33 @@ export default function BookingForm({ space, user, date, setDate, selectedSlot, 
               value={selectedSlot ? JSON.stringify(selectedSlot) : ""}
               onChange={(e) => setSelectedSlot(JSON.parse(e.target.value))}
               className="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              disabled={!date}
               required={!!user}
             >
-              {space.time_slots.map((slot, i) => (
-                <option key={i} value={JSON.stringify(slot)}>
-                  {slot.label} ({formatTime(slot.start)} - {formatTime(slot.end)})
+              {!date ? (
+                <option value="">Select a date first</option>
+              ) : (
+                <option value="" disabled>
+                  Select a time slot
                 </option>
-              ))}
+              )}
+
+              {date &&
+                space.time_slots.map((slot, i) => {
+                  const slotDateTime = new Date(`${date}T${slot.start}`);
+                  const isPast = slotDateTime <= new Date();
+
+                  return (
+                    <option
+                      key={i}
+                      value={JSON.stringify(slot)}
+                      disabled={isPast}
+                    >
+                      {slot.label} ({formatTime(slot.start)} - {formatTime(slot.end)})
+                      {isPast ? " - Not Available" : ""}
+                    </option>
+                  );
+                })}
             </select>
           </div>
 
