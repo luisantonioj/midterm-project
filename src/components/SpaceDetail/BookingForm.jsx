@@ -58,7 +58,7 @@ export default function BookingForm({ space, user, date, setDate, selectedSlot, 
               onChange={e => setDate(e.target.value)}
               min={new Date().toLocaleDateString('en-CA')} 
               className="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-indigo-500 focus:border-transparent" 
-              required
+              required={!!user}
             />
           </div>
 
@@ -68,7 +68,7 @@ export default function BookingForm({ space, user, date, setDate, selectedSlot, 
               value={selectedSlot ? JSON.stringify(selectedSlot) : ""}
               onChange={(e) => setSelectedSlot(JSON.parse(e.target.value))}
               className="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-              required
+              required={!!user}
             >
               {space.time_slots.map((slot, i) => (
                 <option key={i} value={JSON.stringify(slot)}>
