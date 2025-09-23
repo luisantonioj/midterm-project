@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import ConfirmModal from "../MyBookings/ConfirmModal";
 
 export default function BookingForm({ space, user, date, setDate, selectedSlot, setSelectedSlot, message, setMessage, handleBook, formatTime }) {
   const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,7 +17,8 @@ export default function BookingForm({ space, user, date, setDate, selectedSlot, 
 
   const handleConfirm = () => {
     setShowModal(false);
-    handleBook();
+    const syntheticEvent = { preventDefault: () => {} };
+    handleBook(syntheticEvent);
   };
 
   const handleCancel = () => {
