@@ -39,8 +39,9 @@ export default function SpaceDetail() {
       price: space.price,
       note: message,
     });
-    alert("Booking confirmed! Go to My Bookings to view.");
-    navigate("/my-bookings");
+    // alert("Booking confirmed! Go to My Bookings to view.");
+    // navigate("/my-bookings");
+    return true;
   };
 
   const handleBack = () => {

@@ -4,6 +4,7 @@ import ConfirmModal from "../MyBookings/ConfirmModal";
 
 export default function BookingForm({ space, user, date, setDate, selectedSlot, setSelectedSlot, message, setMessage, handleBook, formatTime }) {
   const [showModal, setShowModal] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -18,12 +19,20 @@ export default function BookingForm({ space, user, date, setDate, selectedSlot, 
   const handleConfirm = () => {
     setShowModal(false);
     const syntheticEvent = { preventDefault: () => {} };
-    handleBook(syntheticEvent);
+    const success = handleBook(syntheticEvent);
+    if (success) {
+      setShowSuccessModal(true);
+    }
   };
 
   const handleCancel = () => {
     setShowModal(false); 
   }
+
+  const handleSuccessConfirm = () => {
+    setShowSuccessModal(false);
+    navigate("/my-bookings");
+  };
 
   const modalMessage = `
     Space: ${space.name}
@@ -96,6 +105,7 @@ export default function BookingForm({ space, user, date, setDate, selectedSlot, 
           </div>
         </form>
       </div>
+
       {user && (
         <ConfirmModal
           show={showModal}
@@ -103,6 +113,16 @@ export default function BookingForm({ space, user, date, setDate, selectedSlot, 
           onCancel={handleCancel}
           title="Confirm Booking"
           message={modalMessage}
+        />
+      )}
+
+      {user && (
+        <ConfirmModal
+          show={showSuccessModal}
+          onConfirm={handleSuccessConfirm}
+          onCancel={handleSuccessConfirm} 
+          title="Booking Confirmed!"
+          message="Your booking has been confirmed! Go to My Bookings to view your reservation."
         />
       )}
     </>
