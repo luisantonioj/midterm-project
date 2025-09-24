@@ -37,6 +37,7 @@ export default function SpaceDetail() {
       date: date || new Date().toISOString().slice(0,10),
       timeSlot: selectedSlot,
       price: space.price,
+      location: space.location,
       note: message,
     });
     // alert("Booking confirmed! Go to My Bookings to view.");
