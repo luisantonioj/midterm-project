@@ -26,7 +26,7 @@ export default function ConfirmModal({ show, onConfirm, onCancel, message, title
             className="px-5 py-2.5 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors duration-200 font-medium"
             onClick={onCancel}
           >
-            Cancel
+            Close
           </button>
           <button
             className="px-5 py-2.5 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors duration-200 font-medium"
