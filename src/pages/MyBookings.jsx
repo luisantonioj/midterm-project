@@ -9,7 +9,6 @@ export default function MyBookings() {
   const { user } = useAuth();
   const { bookings, cancelBooking, deleteBooking, isLoading } = useBookings();
   const [selectedCancel, setSelectedCancel] = useState(null);
-  const [selectedDelete, setSelectedDelete] = useState(null);
   const [deletingId, setDeletingId] = useState(null);
 
   if (!user) return <Login />;
@@ -19,16 +18,6 @@ export default function MyBookings() {
   const handleCancelConfirm = () => {
     cancelBooking(selectedCancel);
     setSelectedCancel(null);
-  };
-
-  const handleDeleteConfirm = async () => {
-    setDeletingId(selectedDelete);
-    try {
-      await deleteBooking(selectedDelete);
-    } finally {
-      setSelectedDelete(null);
-      setDeletingId(null);
-    }
   };
 
   return (
@@ -41,8 +30,8 @@ export default function MyBookings() {
       <BookingList
         bookings={myBookings}
         isLoading={isLoading}
-        onCancel={(id) => setSelectedCancel(id)}
-        onDelete={(id) => setSelectedDelete(id)}
+        onCancel={cancelBooking}
+        onDelete={deleteBooking}
         deletingId={deletingId}
       />
 
@@ -53,14 +42,6 @@ export default function MyBookings() {
         onCancel={() => setSelectedCancel(null)}
         message="Are you sure you want to cancel this booking?"
         title="Cancel Booking"
-      />
-
-      <ConfirmModal
-        show={!!selectedDelete}
-        onConfirm={handleDeleteConfirm}
-        onCancel={() => setSelectedDelete(null)}
-        message="Are you sure you want to delete this completed booking? This action cannot be undone."
-        title="Delete Booking"
       />
     </div>
   );
