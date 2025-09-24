@@ -5,7 +5,20 @@ export default function BookingCard({ booking, onCancel, onDelete, deletingId })
   const [showCancelModal, setShowCancelModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
-  const isCompleted = new Date(booking.date) < new Date();
+  // const isCompleted = new Date(booking.date) < new Date();
+  // const isUpcoming = !isCompleted;
+
+  const getBookingEndTime = () => {
+    if (!booking.date || !booking.timeSlot?.end) return null;
+
+    const bookingEnd = new Date(`${booking.date} ${booking.timeSlot.end}`);
+    return bookingEnd;
+  };
+
+  const now = new Date();
+  const bookingEnd = getBookingEndTime();
+
+  const isCompleted = bookingEnd ? bookingEnd < now : new Date(booking.date) < now;
   const isUpcoming = !isCompleted;
 
   const handleCancel = (e) => {
