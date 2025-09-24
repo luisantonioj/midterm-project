@@ -123,7 +123,7 @@ export default function BookingCard({ booking, onCancel, onDelete, deletingId })
                 : "Are you sure you want to delete this completed booking? This action cannot be undone."}
             </p>
             <div className="bg-gray-50 border rounded-lg p-4 text-sm text-gray-700 space-y-1">
-              <p><span className="font-semibold">Space:</span> {booking.spaceName}</p>
+              <p className="font-bold text-lg text-gray-900">{booking.spaceName}</p>
               <p><span className="font-semibold">Date:</span> {booking.date}</p>
               <p><span className="font-semibold">Time:</span> {formatTimeSlot(booking.timeSlot)}</p>
               <p><span className="font-semibold">Location:</span> {booking.location}</p>

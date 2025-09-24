@@ -28,22 +28,25 @@ export default function BookingForm({ space, user, date, setDate, selectedSlot, 
 
   // --- Helpers ---
   const getModalMessage = () => (
-    <div className="bg-gray-50 p-4 rounded-lg text-gray-700 text-sm space-y-2">
-      <div className="font-bold text-lg text-gray-900">{space.name}</div>
-      <div>
-        <div><span className="font-medium">Date:</span> {date}</div>
+    <div>
+      <p className="text-slate-700">Please review your booking details carefully before confirming your reservation.</p>
+      <div className="bg-gray-50 border p-4 mt-4 rounded-lg text-gray-700 text-sm space-y-2">
+        <div className="font-bold text-lg text-gray-900">{space.name}</div>
         <div>
-          <span className="font-medium">Time:</span>{" "}
-          {selectedSlot
-            ? `${formatTime(selectedSlot.start)} - ${formatTime(selectedSlot.end)}`
-            : "Not selected"}
+          <div><span className="font-medium">Date:</span> {date}</div>
+          <div>
+            <span className="font-medium">Time:</span>{" "}
+            {selectedSlot
+              ? `${formatTime(selectedSlot.start)} - ${formatTime(selectedSlot.end)}`
+              : "Not selected"}
+          </div>
+          <div><span className="font-medium">Price:</span> ₱{space.price}</div>
+          <div><span className="font-medium">Location:</span> {space.location}</div>
         </div>
-        <div><span className="font-medium">Price:</span> ₱{space.price}</div>
-        <div><span className="font-medium">Location:</span> {space.location}</div>
-      </div>
-      <div>
-        <span className="font-medium">Special Requests:</span>{" "}
-        {message ? message : "None"}
+        <div>
+          <span className="font-medium">Special Requests:</span>{" "}
+          {message ? message : "None"}
+        </div>
       </div>
     </div>
   );
