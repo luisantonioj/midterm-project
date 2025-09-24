@@ -5,9 +5,6 @@ export default function BookingCard({ booking, onCancel, onDelete, deletingId })
   const [showCancelModal, setShowCancelModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
-  // const isCompleted = new Date(booking.date) < new Date();
-  // const isUpcoming = !isCompleted;
-
   const getBookingEndTime = () => {
     if (!booking.date || !booking.timeSlot?.end) return null;
 
@@ -41,11 +38,26 @@ export default function BookingCard({ booking, onCancel, onDelete, deletingId })
     onDelete(booking.id);
   };
 
-  const formatTimeSlot = (slot) => {
-    if (!slot) return "";
-    if (typeof slot === "string") return slot;
-    return `${slot.label} (${slot.start} - ${slot.end})`;
-  };
+  const formatTime = (timeStr) => {
+  if (!timeStr) return "";
+
+  const [hours, minutes] = timeStr.split(":").map(Number);
+  const date = new Date();
+  date.setHours(hours, minutes);
+
+  return date.toLocaleTimeString([], {
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+  });
+};
+
+const formatTimeSlot = (slot) => {
+  if (!slot) return "";
+  if (typeof slot === "string") return slot;
+
+  return `${slot.label} (${formatTime(slot.start)} - ${formatTime(slot.end)})`;
+};
 
   return (
     <>
