@@ -2,55 +2,62 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import ConfirmModal from "../MyBookings/ConfirmModal";
 
-export default function BookingForm({ space, user, date, setDate, selectedSlot, setSelectedSlot, message, setMessage, handleBook, formatTime }) {
-  const [showModal, setShowModal] = useState(false);
-  const [showSuccessModal, setShowSuccessModal] = useState(false);
+export default function BookingForm({ space, user, date, setDate, selectedSlot, setSelectedSlot, message, setMessage, handleBook, formatTime,}) {
+  const [modal, setModal] = useState(null); // "confirm" | "success" | null
   const navigate = useNavigate();
 
-  useEffect(() => {
-    setSelectedSlot(null);
-  }, [date, setSelectedSlot]);
+  // Reset slot when date changes
+  useEffect(() => setSelectedSlot(null), [date, setSelectedSlot]);
 
+  // --- Handlers ---
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!user) {
-      navigate("/login");
-      return;
-    }
-    setShowModal(true);
+    if (!user) return navigate("/login");
+    setModal("confirm");
   };
 
-  const handleConfirm = () => {
-    setShowModal(false);
-    const syntheticEvent = { preventDefault: () => {} };
-    const success = handleBook(syntheticEvent);
-    if (success) {
-      setShowSuccessModal(true);
-    }
+  const handleConfirmBooking = () => {
+    setModal(null);
+    if (handleBook({ preventDefault: () => {} })) setModal("success");
   };
 
-  const handleCancel = () => {
-    setShowModal(false); 
-  }
-
-  const handleSuccessConfirm = () => {
-    setShowSuccessModal(false);
+  const handleCloseSuccess = () => {
+    setModal(null);
     navigate("/my-bookings");
   };
 
-  const modalMessage = selectedSlot
-  ? `
-    Space: ${space.name}
-    Date: ${date}
-    Time: ${formatTime(selectedSlot.start)} - ${formatTime(selectedSlot.end)}
-    ${message ? `Special Requests: ${message}` : "No special requests"}
-  `
-  : `
-    Space: ${space.name}
-    Date: ${date}
-    Time: Not selected
-    ${message ? `Special Requests: ${message}` : "No special requests"}
-  `;
+  // --- Helpers ---
+  const getModalMessage = () => (
+    <div className="bg-gray-50 p-4 rounded-lg text-gray-700 text-sm space-y-2">
+      <div className="font-bold text-lg text-gray-900">{space.name}</div>
+      <div>
+        <div><span className="font-medium">Date:</span> {date}</div>
+        <div>
+          <span className="font-medium">Time:</span>{" "}
+          {selectedSlot
+            ? `${formatTime(selectedSlot.start)} - ${formatTime(selectedSlot.end)}`
+            : "Not selected"}
+        </div>
+        <div><span className="font-medium">Price:</span> ₱{space.price}</div>
+        <div><span className="font-medium">Location:</span> {space.location}</div>
+      </div>
+      <div>
+        <span className="font-medium">Special Requests:</span>{" "}
+        {message ? message : "None"}
+      </div>
+    </div>
+  );
+
+  const renderSlots = () =>
+    space.time_slots.map((slot, i) => {
+      const isPast = new Date(`${date}T${slot.start}`) <= new Date();
+      return (
+        <option key={i} value={JSON.stringify(slot)} disabled={isPast}>
+          {slot.label} ({formatTime(slot.start)} - {formatTime(slot.end)})
+          {isPast ? " - Not Available" : ""}
+        </option>
+      );
+    });
 
   return (
     <>
@@ -61,20 +68,26 @@ export default function BookingForm({ space, user, date, setDate, selectedSlot, 
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-5">
+          {/* Date */}
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-2">Date</label>
-            <input 
-              type="date" 
-              value={date} 
-              onChange={e => setDate(e.target.value)}
-              min={new Date().toLocaleDateString('en-CA')} 
-              className="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-indigo-500 focus:border-transparent" 
+            <label className="block text-sm font-medium text-slate-700 mb-2">
+              Date
+            </label>
+            <input
+              type="date"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+              min={new Date().toLocaleDateString("en-CA")}
+              className="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
               required={!!user}
             />
           </div>
 
+          {/* Time slot */}
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-2">Time slot</label>
+            <label className="block text-sm font-medium text-slate-700 mb-2">
+              Time slot
+            </label>
             <select
               value={selectedSlot ? JSON.stringify(selectedSlot) : ""}
               onChange={(e) => setSelectedSlot(JSON.parse(e.target.value))}
@@ -85,41 +98,31 @@ export default function BookingForm({ space, user, date, setDate, selectedSlot, 
               {!date ? (
                 <option value="">Select a date first</option>
               ) : (
-                <option value="" disabled>
-                  Select a time slot
-                </option>
+                <>
+                  <option value="" disabled>
+                    Select a time slot
+                  </option>
+                  {renderSlots()}
+                </>
               )}
-
-              {date &&
-                space.time_slots.map((slot, i) => {
-                  const slotDateTime = new Date(`${date}T${slot.start}`);
-                  const isPast = slotDateTime <= new Date();
-
-                  return (
-                    <option
-                      key={i}
-                      value={JSON.stringify(slot)}
-                      disabled={isPast}
-                    >
-                      {slot.label} ({formatTime(slot.start)} - {formatTime(slot.end)})
-                      {isPast ? " - Not Available" : ""}
-                    </option>
-                  );
-                })}
             </select>
           </div>
 
+          {/* Special requests */}
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-2">Special Requests (optional)</label>
-            <textarea 
-              value={message} 
-              onChange={e => setMessage(e.target.value)}
-              className="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-indigo-500 focus:border-transparent" 
+            <label className="block text-sm font-medium text-slate-700 mb-2">
+              Special Requests (optional)
+            </label>
+            <textarea
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              className="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
               rows={3}
               placeholder="Any special requirements or notes..."
             />
           </div>
 
+          {/* Submit */}
           <div className="pt-4">
             {!user && (
               <p className="text-sm text-amber-600 mb-4 text-center">
@@ -127,8 +130,8 @@ export default function BookingForm({ space, user, date, setDate, selectedSlot, 
                 Please sign in to book your slot.
               </p>
             )}
-            <button 
-              type="submit" 
+            <button
+              type="submit"
               className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-6 rounded-lg transition-colors duration-200 text-lg"
             >
               {user ? "Book Now" : "Sign In to Book"}
@@ -137,21 +140,22 @@ export default function BookingForm({ space, user, date, setDate, selectedSlot, 
         </form>
       </div>
 
-      {user && (
+      {/* Modals */}
+      {user && modal === "confirm" && (
         <ConfirmModal
-          show={showModal}
-          onConfirm={handleConfirm}
-          onCancel={handleCancel}
+          show
+          onConfirm={handleConfirmBooking}
+          onCancel={() => setModal(null)}
           title="Confirm Booking"
-          message={modalMessage}
+          message={getModalMessage()}
         />
       )}
 
-      {user && (
+      {user && modal === "success" && (
         <ConfirmModal
-          show={showSuccessModal}
-          onConfirm={handleSuccessConfirm}
-          onCancel={handleSuccessConfirm} 
+          show
+          onConfirm={handleCloseSuccess}
+          onCancel={handleCloseSuccess}
           title="Booking Confirmed!"
           message="Your booking has been confirmed! Go to My Bookings to view your reservation."
         />
@@ -159,3 +163,4 @@ export default function BookingForm({ space, user, date, setDate, selectedSlot, 
     </>
   );
 }
+
