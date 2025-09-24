@@ -6,10 +6,19 @@ export default function BookingCard({ booking, onCancel, onDelete, deletingId })
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
   const getBookingEndTime = () => {
-    if (!booking.date || !booking.timeSlot?.end) return null;
+    if (!booking.date || !booking.timeSlot?.start || !booking.timeSlot?.end) return null;
 
-    const bookingEnd = new Date(`${booking.date} ${booking.timeSlot.end}`);
-    return bookingEnd;
+    const [startH, startM] = booking.timeSlot.start.split(":").map(Number);
+    const [endH, endM] = booking.timeSlot.end.split(":").map(Number);
+
+    const startDate = new Date(`${booking.date} ${booking.timeSlot.start}`);
+    let endDate = new Date(`${booking.date} ${booking.timeSlot.end}`);
+    
+    if (endDate <= startDate) {
+      endDate.setDate(endDate.getDate() + 1);
+    }
+
+    return endDate;
   };
 
   const now = new Date();
