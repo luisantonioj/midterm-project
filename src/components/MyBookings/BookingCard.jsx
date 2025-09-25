@@ -48,7 +48,7 @@ export default function BookingCard({ booking, onCancel, onDelete, deletingId })
 
   return (
     <>
-      <div className="group bg-white rounded-xl shadow-sm p-6 transition-all hover:shadow-md border border-gray-100 pb-2 relative">
+      <div className="group bg-white rounded-xl shadow-sm p-6 transition-all hover:shadow-md hover:border-indigo-400 border border-gray-100 pb-2 relative">
         <div className="flex flex-col md:flex-row justify-between">
           <div className="flex-1">
             {/* Header */}
@@ -59,7 +59,7 @@ export default function BookingCard({ booking, onCancel, onDelete, deletingId })
             </div>
 
             {/* Details */}
-            <div className="grid grid-cols-1 md:grid-cols-[1fr_1.5fr_1fr_1fr] gap-3 mb-4 text-gray-700">
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_1.5fr_1fr_1fr_auto] gap-3 mb-4 text-gray-700 items-center">
               <div>{booking.date}</div>
               <div>{formatTimeSlot(booking.timeSlot)}</div>
               <div className="font-bold text-indigo-600">₱{booking.price}.00</div>
@@ -77,7 +77,7 @@ export default function BookingCard({ booking, onCancel, onDelete, deletingId })
           </div>
 
           {/* Actions */}
-          <div className="flex md:flex-col justify-end md:justify-center space-x-2 md:space-x-0 md:space-y-2 ml-5">
+          <div className="flex md:flex-col items-end md:items-center justify-end md:justify-center space-x-2 md:space-x-0 md:space-y-2 ml-5">
             {isUpcoming && (
               <button
                 onClick={() => setModal("cancel")}
