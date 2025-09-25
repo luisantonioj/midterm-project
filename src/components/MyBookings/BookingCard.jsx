@@ -62,7 +62,7 @@ export default function BookingCard({ booking, onCancel, onDelete, deletingId })
             <div className="grid grid-cols-1 md:grid-cols-[1fr_1.5fr_1fr_1fr] gap-3 mb-4 text-gray-700">
               <div>{booking.date}</div>
               <div>{formatTimeSlot(booking.timeSlot)}</div>
-              <div className="font-bold text-indigo-600">₱{booking.price}</div>
+              <div className="font-bold text-indigo-600">₱{booking.price}.00</div>
               <div>{booking.location}</div>
             </div>
 
@@ -120,7 +120,7 @@ export default function BookingCard({ booking, onCancel, onDelete, deletingId })
               <p><span className="font-semibold">Date:</span> {booking.date}</p>
               <p><span className="font-semibold">Time:</span> {formatTimeSlot(booking.timeSlot)}</p>
               <p><span className="font-semibold">Location:</span> {booking.location}</p>
-              <p><span className="font-semibold">Price:</span> ₱{booking.price}</p>
+              <p><span className="font-semibold">Price:</span> ₱{booking.price}.00</p>
               {booking.notes && (
                 <p><span className="font-semibold">Note:</span> {booking.notes}</p>
               )}
