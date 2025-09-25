@@ -1,8 +1,6 @@
 import React, { useState, useMemo, useEffect } from "react";
 import spacesData from "../data/spaces.json";
-import SpaceCard from "../components/Home/SpaceCard";
 import Hero from "../components/Home/Hero";
-import SearchBar from "../components/Home/SearchBar";
 import Filters from "../components/Home/Filters";
 import SpacesGrid from "../components/Home/SpacesGrid";
 
@@ -71,7 +69,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       <Hero
         heroImages={heroImages}
         currentSlide={currentSlide}
@@ -83,7 +81,7 @@ export default function Home() {
         toggleAmenity={toggleAmenity}
       />
 
-      <div className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-auto whitespace-nowrap scrollbar-hide">
+      <div className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Filters
           amenityOptions={amenityOptions}
           selectedAmenities={selectedAmenities}
@@ -92,6 +90,7 @@ export default function Home() {
           resultCount={filtered.length}
           spacesData={spacesData}
         />
+        
         <SpacesGrid 
           spaces={filtered}
           currentPage={currentPage} 
