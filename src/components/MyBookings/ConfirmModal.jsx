@@ -1,43 +1,49 @@
 import React from "react";
 
-export default function ConfirmModal({ show, onConfirm, onCancel, message, title }) {
+export default function ConfirmModal({ show, onConfirm, onCancel, message, title, confirmText = "Confirm" }) {
   if (!show) return null;
 
   return (
     <div
       className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 backdrop-blur-sm"
-      onClick={(e) => e.stopPropagation()}
+      onClick={onCancel} // Close modal when clicking backdrop
     >
       <div
         className="bg-white rounded-xl shadow-lg p-6 w-11/12 max-w-md border border-slate-200"
         onClick={(e) => e.stopPropagation()}
       >
-        {title && (
-          <h3 className="text-xl font-bold text-slate-800 mb-3 flex items-center gap-2">
-            <i className="fas fa-exclamation-circle text-indigo-600"></i>
-            {title}
-          </h3>
-        )}
-        <div className="text-slate-700 mb-6 whitespace-pre-line leading-relaxed">
+        {/* Header with X button */}
+        <div className="flex justify-between items-center mb-4">
+          {title && (
+            <h3 className="text-xl font-bold text-slate-800 flex items-center gap-2">
+              <i className="fas fa-exclamation-circle text-indigo-600"></i>
+              {title}
+            </h3>
+          )}
+          <button
+            className="text-slate-400 hover:text-slate-600 transition-colors duration-200 p-1 rounded-full hover:bg-slate-100"
+            onClick={onCancel}
+            aria-label="Close"
+          >
+            <i className="fas fa-times text-lg"></i>
+          </button>
+        </div>
+
+        {/* Message content */}
+        <div className="text-slate-700 mb-4 whitespace-pre-line leading-relaxed">
           {message}
         </div>
-        <div className="flex justify-end gap-3">
-          <button
-            className="px-5 py-2.5 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors duration-200 font-medium"
-            onClick={onCancel}
-          >
-            Close
-          </button>
-          <button
-            className="px-5 py-2.5 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors duration-200 font-medium"
-            onClick={(e) => {
-              e.stopPropagation();
-              onConfirm();
-            }}
-          >
-            Confirm
-          </button>
-        </div>
+
+        {/* Dynamic confirm button as full row */}
+        <button
+          className="w-full py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors duration-200 font-medium mt-2 flex items-center justify-center gap-2"
+          onClick={(e) => {
+            e.stopPropagation();
+            onConfirm();
+          }}
+        >
+          {confirmText}
+        </button>
       </div>
     </div>
   );
