@@ -20,7 +20,9 @@ html, body {
       #4f46e5  
       );
     background-size: 200% 100%; 
-    -webkit-background-clip: text;
+    background-clip: text;              
+    -webkit-background-clip: text;      
+    color: transparent;                
     -webkit-text-fill-color: transparent;
     animation: gradientSlide 8s linear infinite;
   }
