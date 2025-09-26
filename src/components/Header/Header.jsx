@@ -49,6 +49,7 @@ export default function Header() {
           <MobileMenuButton
             isMenuOpen={isMenuOpen}
             setIsMenuOpen={setIsMenuOpen}
+            activeLight={isScrolled || isSolidPage} 
           />
         </div>
 

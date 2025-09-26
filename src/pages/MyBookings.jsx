@@ -21,10 +21,10 @@ export default function MyBookings() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8 pt-28">
-      <div className="mb-8">
+    <div className="max-w-6xl mx-auto px-4 py-8 pt-28">
+      <div className="mb-1">
         <h1 className="text-3xl font-bold text-gray-900">My Bookings</h1>
-        <p className="text-gray-600 mt-2">Manage your upcoming and past bookings</p>
+        {/* <p className="text-gray-600 mt-2">Manage your upcoming and past bookings</p> */}
       </div>
 
       <BookingList

@@ -25,7 +25,7 @@ export default function SpaceCard({ space }) {
 
   return (
     <div 
-      className="space-card bg-white rounded-xl shadow-sm overflow-hidden border border-slate-100 hover:bg-indigo-50 transition-all duration-300"
+      className="space-card bg-white rounded-xl shadow-sm overflow-hidden border border-slate-100 hover:shadow-md hover:border-indigo-400 transition-all duration-300"
     >
       <Link to={`/space/${space.id}`} className="block">
         <div className="relative">

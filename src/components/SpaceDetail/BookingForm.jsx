@@ -40,7 +40,7 @@ export default function BookingForm({ space, user, date, setDate, selectedSlot, 
               ? `${formatTime(selectedSlot.start)} - ${formatTime(selectedSlot.end)}`
               : "Not selected"}
           </div>
-          <div><span className="font-medium">Price:</span> ₱{space.price}</div>
+          <div><span className="font-medium">Price:</span> ₱{space.price}.00</div>
           <div><span className="font-medium">Location:</span> {space.location}</div>
         </div>
         <div>

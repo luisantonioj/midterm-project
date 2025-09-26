@@ -1,1 +1,29 @@
 @import "tailwindcss";
+
+html, body {
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  @keyframes gradientSlide {
+    0% { background-position: 0% 50%; }
+    100% { background-position: -200% 50%; }
+  }
+
+  .gradient-text {
+    background: repeating-linear-gradient(90deg,  
+      #4f46e5, 
+      #6366f1,
+      #8b5cf6,
+      #c084fc,  
+      #846fe2, 
+      #4f46e5  
+      );
+    background-size: 200% 100%; 
+    background-clip: text;              
+    -webkit-background-clip: text;      
+    color: transparent;                
+    -webkit-text-fill-color: transparent;
+    animation: gradientSlide 8s linear infinite;
+  }
+}

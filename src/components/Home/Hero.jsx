@@ -48,23 +48,6 @@ export default function Hero({
           </p>
 
           <SearchBar query={query} setQuery={setQuery} />
-
-          {/* Quick Filters
-          <div className="mt-8 flex flex-wrap justify-center gap-2">
-            {amenityOptions.slice(0, 4).map((amenity) => (
-              <button
-                key={amenity}
-                onClick={() => toggleAmenity(amenity)}
-                className={`px-4 py-2 rounded-full text-sm font-medium ${
-                  selectedAmenities.includes(amenity)
-                    ? "bg-indigo-600 text-white"
-                    : "bg-white/10 text-slate-200 hover:bg-white/20"
-                }`}
-              >
-                <span className="capitalize">{amenity}</span>
-              </button>
-            ))}
-          </div> */}
         </div>
       </div>
     </section>
