@@ -42,13 +42,15 @@ export default function BookingList({ bookings, isLoading, onCancel, onDelete, d
   return (
     <div className="space-y-8">
       {/* Label + Sort Toggle */}
-      <div className="flex justify-between items-center mb-2">
+      <div className="flex justify-between items-center mb-1">
         <h2 className="font-semibold text-gray-800">Bookings (Sorted by Date)</h2>
         <button
           onClick={() => setAsc(!asc)}
-          className="px-3 py-1 border rounded-lg text-sm bg-white hover:bg-gray-50"
+          className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium 
+                    bg-indigo-50 text-indigo-700 hover:bg-indigo-100 transition"
         >
-          {asc ? "Ascending ↑" : "Descending ↓"}
+          {asc ? "Newest first" : "Oldest first"}
+          <span className="text-xs">{asc ? "↑" : "↓"}</span>
         </button>
       </div>
 
