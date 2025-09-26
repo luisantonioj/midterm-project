@@ -18,9 +18,9 @@ export default function Hero({
     setCurrentSlide((prev) => (prev - 1 + heroImages.length) % heroImages.length);
 
   return (
-    <section className="relative h-[80vh] md:h-screen max-h-[900px] text-white overflow-hidden w-full">
+    <section className="relative h-screen max-h-[800px] text-white overflow-hidden w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
       {/* Slideshow */}
-      <div className="relative h-full w-full">
+      <div className="relative h-full">
         {heroImages.map((image, index) => (
           <div
             key={index}
@@ -31,7 +31,7 @@ export default function Hero({
             <img
               src={image}
               alt={`Study space ${index + 1}`}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover min-w-full"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-slate-900/90"></div>
           </div>
@@ -41,15 +41,8 @@ export default function Hero({
       {/* Hero Content */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="text-center px-4 max-w-4xl">
-          <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold mb-1">
-            Study Smarter,
-          </h1>
-          <h1
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 block text-indigo-400"
-            style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}
-          >
-            Anywhere
-          </h1>
+          <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold mb-1">Study Smarter,</h1>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 block text-indigo-400" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'}}>Anywhere</h1>
           <p className="text-xl text-slate-200 max-w-3xl mx-auto mb-10">
             Easily discover and reserve the perfect study and co-working spaces nationwide
           </p>
