@@ -6,13 +6,12 @@ export default function ConfirmModal({ show, onConfirm, onCancel, message, title
   return (
     <div
       className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 backdrop-blur-sm"
-      onClick={onCancel} // Close modal when clicking backdrop
+      onClick={onCancel}
     >
       <div
         className="bg-white rounded-xl shadow-lg p-6 w-11/12 max-w-md border border-slate-200"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Header with X button */}
         <div className="flex justify-between items-center mb-4">
           {title && (
             <h3 className="text-xl font-bold text-slate-800 flex items-center gap-2">
@@ -29,12 +28,10 @@ export default function ConfirmModal({ show, onConfirm, onCancel, message, title
           </button>
         </div>
 
-        {/* Message content */}
         <div className="text-slate-700 mb-4 whitespace-pre-line leading-relaxed">
           {message}
         </div>
 
-        {/* Dynamic confirm button as full row */}
         <button
           className="w-full py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors duration-200 font-medium mt-2 flex items-center justify-center gap-2"
           onClick={(e) => {
