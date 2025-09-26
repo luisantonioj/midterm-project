@@ -33,34 +33,12 @@ export default function DesktopNav({ user, login, logout, isScrolled, isSolidPag
     };
   }, []);
 
-  const handleSignIn = () => {
-    setShowSignInModal(true);
-  };
-
-  const handleConfirmSignIn = () => {
-    setShowSignInModal(false);
-    login();
-    navigate("/");
-  };
-
-  const handleCancelSignIn = () => {
-    setShowSignInModal(false);
-  };
-
-  const handleLogout = () => {
-    setMenuOpen(false);
-    setShowLogoutModal(true);
-  };
-
-  const handleConfirmLogout = () => {
-    setShowLogoutModal(false);
-    logout();
-    navigate("/");
-  };
-
-  const handleCancelLogout = () => {
-    setShowLogoutModal(false);
-  };
+  const handleSignIn = () => setShowSignInModal(true);
+  const handleConfirmSignIn = () => { setShowSignInModal(false); login(); navigate("/"); };
+  const handleCancelSignIn = () => setShowSignInModal(false);
+  const handleLogout = () => { setMenuOpen(false); setShowLogoutModal(true); };
+  const handleConfirmLogout = () => { setShowLogoutModal(false); logout(); navigate("/"); };
+  const handleCancelLogout = () => setShowLogoutModal(false);
 
   return (
     <>
@@ -82,7 +60,7 @@ export default function DesktopNav({ user, login, logout, isScrolled, isSolidPag
 
         <Link
           to="/my-bookings"
-          className={`relative px-4 py-2.5 rounded-lg transition-all duration-200 ${
+          className={`relative px-5 py-2.5 rounded-lg transition-all duration-200 ${
             location.pathname.startsWith("/my-bookings")
               ? activeLight
                 ? "bg-indigo-50 text-indigo-700 font-medium shadow-sm"
@@ -103,6 +81,8 @@ export default function DesktopNav({ user, login, logout, isScrolled, isSolidPag
             </span>
           )}
         </Link>
+
+        <div className={`h-6 w-px mr-1 ml-3 ${activeLight ? 'bg-slate-300' : 'bg-white/30'}`}></div>
 
         {!user ? (
           <button
@@ -182,3 +162,4 @@ export default function DesktopNav({ user, login, logout, isScrolled, isSolidPag
     </>
   );
 }
+
