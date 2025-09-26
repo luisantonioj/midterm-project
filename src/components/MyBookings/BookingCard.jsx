@@ -81,7 +81,7 @@ export default function BookingCard({ booking, onCancel, onDelete, deletingId })
             {isUpcoming && (
               <button
                 onClick={() => setModal("cancel")}
-                className="px-4 py-2 bg-white border border-red-300 text-red-600 rounded-lg hover:bg-red-50 transition-colors focus:outline-none focus:ring-2 focus:ring-red-200 text-sm font-medium"
+                className="px-4 py-2 rounded-full text-sm font-medium bg-red-50 text-red-700 hover:bg-red-100 transition mt-9 mb-5"
               >
                 Cancel Booking
               </button>
